@@ -1,0 +1,65 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.label {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 var(--space-4);
+  background: var(--ink);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-field);
+  color: var(--white);
+  font-size: 0.84rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input::placeholder {
+  color: var(--muted);
+  opacity: 0.8;
+}
+
+.input:hover:not(:disabled) {
+  border-color: #1f4757; /* estimated, verify against Figma 4:707 */
+}
+
+/* focus: mint border plus a soft ring (Figma 4:711) */
+.input:focus {
+  outline: none;
+  border-color: var(--mint);
+  box-shadow: 0 0 0 3px var(--mint-soft);
+}
+
+/* error (Figma 4:720) */
+.invalid,
+.invalid:hover:not(:disabled) {
+  border-color: var(--danger);
+}
+.invalid:focus {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.18);
+}
+
+/* disabled (Figma 4:725) */
+.input:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 0.75rem;
+}

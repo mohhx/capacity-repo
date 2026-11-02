@@ -1,0 +1,31 @@
+.banner {
+  padding: var(--space-4) var(--space-6);
+  border: var(--border-width) solid var(--border);
+  border-left-width: 4px;
+  border-radius: var(--radius-card);
+  background: var(--surface);
+}
+
+.title {
+  margin-bottom: var(--space-1);
+  font-weight: 700;
+}
+
+.body {
+  color: var(--muted);
+  font-size: var(--fs-body);
+}
+
+.info {
+  border-left-color: var(--mint);
+}
+
+.success {
+  border-left-color: var(--mint);
+  background: var(--mint-soft);
+}
+
+.error {
+  border-left-color: var(--danger);
+  background: rgba(255, 107, 107, 0.08);
+}
