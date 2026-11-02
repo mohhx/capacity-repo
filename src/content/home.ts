@@ -61,9 +61,5 @@ export const HOME = {
   },
   markets: {
     title: "Launching in Nigeria and Kenya",
-    items: [
-      { id: "ng", name: "Nigeria", line: "NGN (₦) · Cards and bank transfer", note: "Starting on selected routes. Route names TBC." },
-      { id: "ke", name: "Kenya", line: "KES (KSh) · Cards, bank transfer and M-Pesa", note: "Starting on selected routes. Route names TBC." },
-    ],
   },
 } as const;

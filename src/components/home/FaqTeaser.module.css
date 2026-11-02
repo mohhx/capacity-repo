@@ -1,0 +1,21 @@
+.section {
+  display: grid;
+  gap: var(--space-8);
+  justify-items: start;
+  padding-block: var(--space-8);
+}
+
+.section > :nth-child(2) {
+  width: 100%;
+}
+
+.link {
+  color: var(--mint);
+  font-size: var(--fs-body);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
