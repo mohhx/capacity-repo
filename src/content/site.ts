@@ -27,6 +27,7 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 /** Labels and order from the Figma menu drawer (frames "menu home" and siblings). */
+/** Mobile drawer: own labels and order (Figma menu frame), not the desktop nav. */
 export const MENU_LINKS: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "How it works", href: "/how-it-works" },

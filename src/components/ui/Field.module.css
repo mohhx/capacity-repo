@@ -45,7 +45,7 @@
 }
 .invalid:focus {
   border-color: var(--danger);
-  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.18);
+  box-shadow: 0 0 0 3px rgba(255, 138, 138, 0.18);
 }
 
 /* disabled (Figma 4:725) */

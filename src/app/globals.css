@@ -1,4 +1,5 @@
 /*
+  Colours and radii follow CAPACITY Design notes v0.1. --surface-raised is still an estimate.
   CAPACITY design tokens.
   Read from Figma: Inter, mint #19f0b4, ink #040d14, muted #9fb4c0, type sizes.
   Colours verified against Design notes v0.1 (2 Nov 2026). Radii still estimated; verify in Figma.
@@ -23,6 +24,10 @@
   --reading: #d5e2ea;
   --mint-soft: rgba(25, 240, 180, 0.12);
   --danger: #ff8a8a;
+  --danger-bg: #2a1216;
+  --mint-hover: #6bffd6;
+  --highlight: #0e2a34;
+  --reading: #d5e2ea;
   --danger-bg: #2a1216;
   --blue: #1e90ff;
   --track: #12384a;
@@ -55,9 +60,12 @@
   --container: 1200px;
   --gutter: clamp(1.25rem, 4vw, 7.5rem); /* 120px side padding at 1440 */
 
-  /* shape (estimated, verify) */
-  --radius-card: 14px;
-  --radius-field: 10px;
+  /* shape (Design notes v0.1) */
+  --radius-field: 8px;
+  --radius-sm: 12px;
+  --radius-card: 16px;
+  --radius-lg: 20px;
+  --radius-panel: 24px;
   --radius-pill: 999px;
   --border-width: 1px;
 }
