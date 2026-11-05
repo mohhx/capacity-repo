@@ -33,11 +33,24 @@
 }
 
 .bottom {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
   gap: var(--space-4);
+}
+
+.submit > * {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .submit > * {
+    width: auto;
+  }
 }
 
 .consent {

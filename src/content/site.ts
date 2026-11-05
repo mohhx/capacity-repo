@@ -26,7 +26,17 @@ export const NAV_LINKS: NavLink[] = [
   { label: "FAQ", href: "/faq" },
 ];
 
-export const MENU_LINKS: NavLink[] = [...NAV_LINKS, { label: "Legal", href: "/legal" }];
+/** Labels and order from the Figma menu drawer (frames "menu home" and siblings). */
+export const MENU_LINKS: NavLink[] = [
+  { label: "Home", href: "/" },
+  { label: "How it works", href: "/how-it-works" },
+  { label: "Pricing and fees", href: "/pricing" },
+  { label: "About Us", href: "/about" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Trust and Safety", href: "/trust-and-safety" },
+  { label: "Legal", href: "/legal" },
+  { label: "FAQ", href: "/faq" },
+];
 export const PRIMARY_CTA: NavLink = { label: "Apply to list capacity", href: "/apply" };
 export const SECONDARY_CTA: NavLink = { label: "Request early access", href: "/early-access" };
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useMemo, useSyncExternalStore } from "react";
 import { COUNTRIES, DEFAULT_COUNTRY, type Country, type CountryCode } from "@/config/platform";
 
 const STORAGE_KEY = "capacity:country";
@@ -12,26 +12,52 @@ interface CountryContextValue {
 
 const CountryContext = createContext<CountryContextValue | null>(null);
 
-export function CountryProvider({ children }: { children: React.ReactNode }) {
-  const [code, setCode] = useState<CountryCode>(DEFAULT_COUNTRY);
+/*
+  The saved country lives in localStorage, which React does not own, so it is read as an
+  external store. The server snapshot is always the default country, so server and client HTML
+  match on first render and the saved choice is applied right after hydration.
+*/
+const listeners = new Set<() => void>();
+let memoryChoice: CountryCode | null = null; // used when storage is blocked
 
-  // Read the saved choice after mount so server and client HTML match.
-  useEffect(() => {
-    try {
-      const saved = window.localStorage.getItem(STORAGE_KEY);
-      if (saved === "NG" || saved === "KE") setCode(saved);
-    } catch {
-      // storage can be blocked; the default country is fine
-    }
-  }, []);
+function isCode(value: string | null): value is CountryCode {
+  return value === "NG" || value === "KE";
+}
+
+function subscribe(onChange: () => void) {
+  listeners.add(onChange);
+  window.addEventListener("storage", onChange); // other tabs
+  return () => {
+    listeners.delete(onChange);
+    window.removeEventListener("storage", onChange);
+  };
+}
+
+function getSnapshot(): CountryCode {
+  try {
+    const saved = window.localStorage.getItem(STORAGE_KEY);
+    if (isCode(saved)) return saved;
+  } catch {
+    // storage can be blocked; fall through to the in-memory choice
+  }
+  return memoryChoice ?? DEFAULT_COUNTRY;
+}
+
+function getServerSnapshot(): CountryCode {
+  return DEFAULT_COUNTRY;
+}
+
+export function CountryProvider({ children }: { children: React.ReactNode }) {
+  const code = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const setCountry = useCallback((next: CountryCode) => {
-    setCode(next);
+    memoryChoice = next;
     try {
       window.localStorage.setItem(STORAGE_KEY, next);
     } catch {
-      // ignore
+      // ignore: the in-memory choice still applies for this visit
     }
+    listeners.forEach((notify) => notify());
   }, []);
 
   const value = useMemo(() => ({ country: COUNTRIES[code], setCountry }), [code, setCountry]);

@@ -26,6 +26,13 @@
   height: 100%;
 }
 
+/* Tablet cards are narrow, so the number sits above the text (as in Figma). */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .card {
+    flex-direction: column;
+  }
+}
+
 .number {
   flex: none;
   display: grid;

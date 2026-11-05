@@ -1,11 +1,26 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { HOME } from "@/content/home";
 import styles from "./Hero.module.css";
+
+/** Hero A (truck at dock, no baked-in branding). Hero B has a logo painted into the scene; use it only once the final logo is decided. */
+const HERO_IMAGE = "/images/hero-a-truck-at-dock-1600.webp";
 
 export function Hero() {
   const { eyebrow, titleLines, titleAccent, lead, primaryCta, secondaryCta } = HOME.hero;
   return (
     <section className={styles.hero}>
+      {/* Phone: photo sits behind the text. Tablet and up: photo is its own panel beside the text. */}
+      <div className={styles.photo} aria-hidden="true">
+        <Image
+          src={HERO_IMAGE}
+          alt=""
+          fill
+          priority
+          sizes="(min-width: 1024px) 560px, (min-width: 768px) 90vw, 100vw"
+          className={styles.image}
+        />
+      </div>
       <div className={styles.text}>
         <p className={styles.eyebrow}>{eyebrow}</p>
         <h1 className={styles.title}>
@@ -22,10 +37,6 @@ export function Hero() {
             {secondaryCta.label}
           </Button>
         </div>
-      </div>
-      <div className={styles.panel} aria-hidden="true">
-        <span className={styles.dot} style={{ left: "32%" }} />
-        <span className={styles.dot} style={{ left: "74%" }} />
       </div>
     </section>
   );

@@ -69,7 +69,9 @@ export function RouteForm() {
                 </p>
               ) : null}
             </div>
-            <Button type="submit">{submit}</Button>
+            <div className={styles.submit}>
+              <Button type="submit">{submit}</Button>
+            </div>
           </div>
         </form>
       </Card>

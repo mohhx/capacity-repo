@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
-import { MENU_LINKS, PRIMARY_CTA, SECONDARY_CTA, SITE } from "@/content/site";
+import { MENU_LINKS, PRIMARY_CTA, SITE } from "@/content/site";
 import { Button } from "@/components/ui/Button";
+import { CountrySwitch } from "./CountrySwitch";
 import styles from "./MobileMenu.module.css";
 
 interface MobileMenuProps {
@@ -67,9 +68,10 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
         aria-label={`${SITE.name} menu`}
       >
         <div className={styles.top}>
-          <span className={styles.title}>Menu</span>
           <button type="button" className={styles.close} onClick={onClose} aria-label="Close menu">
-            <span aria-hidden="true">✕</span>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <path d="M2 2l14 14M16 2L2 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
           </button>
         </div>
 
@@ -93,14 +95,15 @@ export function MobileMenu({ onClose }: MobileMenuProps) {
           </ul>
         </nav>
 
-        <div className={styles.ctas}>
-          <Button href={PRIMARY_CTA.href} fullWidth onClick={onClose}>
-            {PRIMARY_CTA.label}
-          </Button>
-          <Button href={SECONDARY_CTA.href} variant="secondary" fullWidth onClick={onClose}>
-            {SECONDARY_CTA.label}
-          </Button>
+        <div className={styles.divider} aria-hidden="true" />
+
+        <div className={styles.selector}>
+          <CountrySwitch variant="name" />
         </div>
+
+        <Button href={PRIMARY_CTA.href} fullWidth className={styles.cta} onClick={onClose}>
+          {PRIMARY_CTA.label}
+        </Button>
       </div>
     </div>
   );

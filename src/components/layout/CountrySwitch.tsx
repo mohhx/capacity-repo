@@ -5,7 +5,7 @@ import { COUNTRIES, type CountryCode } from "@/config/platform";
 import { useCountry } from "./CountryProvider";
 import styles from "./CountrySwitch.module.css";
 
-export function CountrySwitch() {
+export function CountrySwitch({ variant = "code" }: { variant?: "code" | "name" }) {
   const { country, setCountry } = useCountry();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -35,17 +35,17 @@ export function CountrySwitch() {
     <div className={styles.root} ref={rootRef}>
       <button
         type="button"
-        className={styles.trigger}
+        className={`${styles.trigger} ${variant === "name" ? styles.named : ""}`}
         aria-expanded={open}
         aria-haspopup="true"
         aria-label={`Country: ${country.name}. Change country`}
         onClick={() => setOpen((v) => !v)}
       >
-        {country.code} <span aria-hidden="true">▾</span>
+        {variant === "name" ? country.name : country.code} <span aria-hidden="true">▾</span>
       </button>
 
       {open ? (
-        <ul className={styles.list}>
+        <ul className={`${styles.list} ${variant === "name" ? styles.listUp : ""}`}>
           {Object.values(COUNTRIES).map((c) => (
             <li key={c.code}>
               <button

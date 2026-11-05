@@ -1,3 +1,4 @@
+/* Figma "Menu-drawer" frames (46:1766 and siblings): 300 wide, 20px side padding. */
 .overlay {
   position: fixed;
   inset: 0;
@@ -17,28 +18,20 @@
   right: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
   width: min(300px, 86vw);
   height: 100%;
-  padding: var(--space-6);
+  padding: 13px 20px 24px;
   overflow-y: auto;
-  background: var(--surface-raised);
+  background: var(--surface);
   border-left: var(--border-width) solid var(--border);
   animation: slide 0.25s ease;
 }
 
+/* 44px tap target; the 18px icon sits 26px from the top and right edges. */
 .top {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.title {
-  color: var(--muted);
-  font-size: var(--fs-label);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  justify-content: flex-end;
+  margin-right: -7px;
 }
 
 .close {
@@ -47,39 +40,55 @@
   justify-content: center;
   width: 44px;
   height: 44px;
+  padding: 0;
+  color: var(--white);
   background: transparent;
-  border: var(--border-width) solid var(--border);
-  border-radius: var(--radius-field);
+  border: 0;
   cursor: pointer;
 }
 
+/* First row starts 84px from the top: 13 + 44 + 27. */
 .list {
   display: flex;
   flex-direction: column;
-  margin: 0;
+  gap: 4px;
+  margin: 27px 0 0;
   padding: 0;
   list-style: none;
 }
 
 .link {
-  display: block;
-  padding: var(--space-4) 0;
-  border-bottom: var(--border-width) solid var(--border);
-  font-size: 1.0625rem;
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 var(--space-4);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: color 0.15s ease;
 }
 .link:hover {
   color: var(--mint);
 }
 .active {
   color: var(--mint);
-  font-weight: 700;
+  background: var(--highlight);
 }
 
-.ctas {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  margin-top: auto;
+/* Last row ends at 464; divider at 492. */
+.divider {
+  height: var(--border-width);
+  margin-top: 28px;
+  background: var(--border);
+}
+
+.selector {
+  margin-top: 20px;
+}
+
+.cta {
+  margin-top: 20px;
+  min-height: 48px;
 }
 
 @keyframes slide {

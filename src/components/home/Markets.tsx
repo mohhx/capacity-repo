@@ -16,22 +16,39 @@ function listMethods(methods: readonly string[]): string {
 }
 
 export function Markets() {
+  const names = ORDER.map((code) => COUNTRIES[code].name);
   return (
     <section className={styles.section}>
-      <SectionHeading>{HOME.markets.title}</SectionHeading>
-      <div className={styles.grid}>
-        {ORDER.map((code) => {
-          const c = COUNTRIES[code];
-          return (
-            <Card key={code} as="article" className={styles.card}>
-              <h3 className={styles.name}>{c.name}</h3>
-              <p className={styles.line}>
-                {c.currencyLabel} · {listMethods(c.paymentMethods)}
-              </p>
-              <p className={styles.note}>{LAUNCH_ROUTES.note}</p>
-            </Card>
-          );
-        })}
+      {/* Mobile: heading, two chips and one line (Figma 375). */}
+      <div className={styles.mobileOnly}>
+        <SectionHeading>Launching in</SectionHeading>
+        <ul className={styles.chips}>
+          {names.map((name) => (
+            <li key={name} className={styles.chip}>
+              {name}
+            </li>
+          ))}
+        </ul>
+        <p className={styles.chipNote}>Starting on selected routes in {names.join(" and ")}.</p>
+      </div>
+
+      {/* Tablet and desktop: two cards (Figma 768 and 1440). */}
+      <div className={styles.desktopOnly}>
+        <SectionHeading>{HOME.markets.title}</SectionHeading>
+        <div className={styles.grid}>
+          {ORDER.map((code) => {
+            const c = COUNTRIES[code];
+            return (
+              <Card key={code} as="article" className={styles.card}>
+                <h3 className={styles.name}>{c.name}</h3>
+                <p className={styles.line}>
+                  {c.currencyLabel} · {listMethods(c.paymentMethods)}
+                </p>
+                <p className={styles.note}>{LAUNCH_ROUTES.note}</p>
+              </Card>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

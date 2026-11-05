@@ -57,3 +57,17 @@
   color: var(--muted);
   font-size: var(--fs-small);
 }
+
+/* Menu drawer version (Figma 46:1796): 104 x 36 pill, full country name, list opens upward. */
+.named {
+  min-height: 36px;
+  min-width: 104px;
+  padding: 0 var(--space-4);
+  font-size: 0.78125rem; /* 12.5px */
+}
+.listUp {
+  top: auto;
+  right: auto;
+  left: 0;
+  bottom: calc(100% + var(--space-2));
+}

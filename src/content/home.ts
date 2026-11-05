@@ -12,10 +12,10 @@ export const HOME = {
   book: {
     title: "What you can book",
     items: [
-      { id: "return", icon: "truck", title: "Return trips", text: "Empty legs, sold" },
-      { id: "partial", icon: "split", title: "Partial loads", text: "Book only your part" },
-      { id: "cold", icon: "snowflake", title: "Refrigerated", text: "Cold-chain space" },
-      { id: "vans", icon: "van", title: "Vans", text: "Smaller loads" },
+      { id: "return", icon: "return-trips", title: "Return trips", text: "Empty legs, sold" },
+      { id: "partial", icon: "partial-loads", title: "Partial loads", text: "Book only your part" },
+      { id: "cold", icon: "refrigerated", title: "Refrigerated", text: "Cold-chain space" },
+      { id: "vans", icon: "vans", title: "Vans", text: "Smaller loads" },
     ],
   },
   idle: {
@@ -53,10 +53,10 @@ export const HOME = {
   trust: {
     title: "Built to be trusted",
     items: [
-      { id: "verified", icon: "shield", label: "Verified users" },
-      { id: "held", icon: "lock", label: "Payment held until delivery" },
-      { id: "dispute", icon: "chat", label: "Dispute support" },
-      { id: "ratings", icon: "star", label: "Ratings and reviews" },
+      { id: "verified", icon: "verified", label: "Verified users" },
+      { id: "held", icon: "payment-held", label: "Payment held until delivery" },
+      { id: "dispute", icon: "dispute-support", label: "Dispute support" },
+      { id: "ratings", icon: "ratings", label: "Ratings and reviews" },
     ],
   },
   markets: {

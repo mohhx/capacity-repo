@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { COMPANY, FOOTER } from "@/content/site";
+import { COMPANY, FOOTER, SITE } from "@/content/site";
 import { Logo } from "@/components/ui/Logo";
 import styles from "./Footer.module.css";
 
@@ -18,6 +18,22 @@ function ContactLine({ item, kind }: { item: ContactItem; kind: "mail" | "tel" }
 export function Footer() {
   return (
     <footer className={styles.footer}>
+      {/* Phone: compact footer from the 375 Figma frame (4:146). */}
+      <div className={`container ${styles.compact}`}>
+        <Link href="/" className={styles.wordmark} aria-label={`${SITE.name} home`}>
+          {SITE.name}
+        </Link>
+        <p className={styles.compactLinks}>
+          <ContactLine item={COMPANY.email} kind="mail" />
+          <span aria-hidden="true"> · </span>
+          <Link href="/privacy">Privacy</Link>
+          <span aria-hidden="true"> · </span>
+          <Link href="/terms">Terms</Link>
+        </p>
+        <p className={styles.compactCompany}>{COMPANY.legalName.value}</p>
+      </div>
+
+      {/* Tablet and up: full footer. */}
       <div className={`container ${styles.inner}`}>
         <div className={styles.brand}>
           <Logo />

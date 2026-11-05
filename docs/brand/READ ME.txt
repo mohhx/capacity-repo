@@ -1,0 +1,12 @@
+CAPACITY assets - quick notes
+
+Logo - icon, name and icon+name, for dark and light backgrounds. Also favicon and app icon sizes.
+Icons - 12 PNG icons (green, transparent) plus one sheet showing them all.
+Illustrations - two optional pictures, PNG.
+Hero images - the two hero backgrounds as WebP (web format) in three widths: 750, 1200, 1600.
+Social preview - the 1200 x 630 picture shown when the site link is shared.
+Design notes.pdf - colours, text sizes, spacing, screen sizes and motion.
+
+
+
+.

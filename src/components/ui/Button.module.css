@@ -30,7 +30,7 @@
   color: var(--ink);
 }
 .primary:hover {
-  background: #4ff5c6; /* estimated hover, verify against Figma 4:673 */
+  background: var(--mint-hover);
 }
 
 /* secondary */

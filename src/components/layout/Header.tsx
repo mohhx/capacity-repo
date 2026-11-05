@@ -16,24 +16,22 @@ function isActive(pathname: string, href: string): boolean {
 
 export function Header() {
   const pathname = usePathname();
-  const [menuOpen, setMenuOpen] = useState(false);
+  // The drawer is "open" only for the page it was opened on, so it closes by itself
+  // when the route changes (no effect needed).
+  const [openOnPath, setOpenOnPath] = useState<string | null>(null);
+  const menuOpen = openOnPath === pathname;
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const closeMenu = useCallback(() => {
-    setMenuOpen(false);
+    setOpenOnPath(null);
     menuButtonRef.current?.focus();
   }, []);
-
-  // Close the drawer when the page changes.
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
 
   // Close the drawer if the window grows to desktop width.
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 1024px)");
     const onChange = (e: MediaQueryListEvent) => {
-      if (e.matches) setMenuOpen(false);
+      if (e.matches) setOpenOnPath(null);
     };
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);
@@ -72,7 +70,7 @@ export function Header() {
               className={styles.menuButton}
               aria-label="Open menu"
               aria-expanded={menuOpen}
-              onClick={() => setMenuOpen(true)}
+              onClick={() => setOpenOnPath(pathname)}
             >
               <span aria-hidden="true">☰</span>
             </button>

@@ -1,7 +1,7 @@
 /*
   CAPACITY design tokens.
   Read from Figma: Inter, mint #19f0b4, ink #040d14, muted #9fb4c0, type sizes.
-  VERIFY in Figma inspect: --surface, --surface-raised, --border, --radius-* (estimated from the screenshot).
+  Colours verified against Design notes v0.1 (2 Nov 2026). Radii still estimated; verify in Figma.
   Breakpoints used in CSS Modules (media queries cannot use variables):
     tablet: 768px   desktop: 1024px   wide: 1440px
 */
@@ -14,12 +14,16 @@
   --muted: #9fb4c0;
   --white: #ffffff;
 
-  /* colors (estimated, verify) */
+  /* colors (Design notes v0.1) */
   --surface: #0a1a24;
-  --surface-raised: #0b1f2a;
+  --surface-raised: #0a1a24;
+  --highlight: #0e2a34;
   --border: #12384a;
+  --mint-hover: #6bffd6;
+  --reading: #d5e2ea;
   --mint-soft: rgba(25, 240, 180, 0.12);
-  --danger: #ff6b6b;
+  --danger: #ff8a8a;
+  --danger-bg: #2a1216;
   --blue: #1e90ff;
   --track: #12384a;
   --gradient-panel: linear-gradient(180deg, #0b2a4a 0%, #051520 100%);
