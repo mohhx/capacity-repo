@@ -7,6 +7,7 @@
   align-items: center;
   overflow: hidden;
   border-radius: var(--radius-card);
+  margin-top: var(--space-4); /* phone: space between the header and the hero card */
 }
 
 .text {
@@ -85,6 +86,7 @@
     padding: var(--space-12) 0 var(--space-8);
     overflow: visible;
     border-radius: 0;
+    margin-top: 0; /* tablet and up: no card, so no extra space */
   }
   .lead {
     color: var(--muted); /* CHANGED: grey again once the text is no longer over the photo */
