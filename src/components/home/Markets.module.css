@@ -1,5 +1,5 @@
 .section {
-  padding-block: var(--space-8);
+  padding-block: var(--section-top) 0;
 }
 
 .mobileOnly {
@@ -17,7 +17,7 @@
   }
   .desktopOnly {
     display: grid;
-    gap: var(--space-8);
+    gap: var(--section-heading-gap);
   }
 }
 

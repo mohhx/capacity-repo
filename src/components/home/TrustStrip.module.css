@@ -1,7 +1,7 @@
 .section {
   display: grid;
-  gap: var(--space-8);
-  padding-block: var(--space-8);
+  gap: var(--section-heading-gap);
+  padding-block: var(--section-top) 0;
 }
 
 .grid {

@@ -2,7 +2,7 @@
   display: grid;
   gap: var(--space-8);
   justify-items: start;
-  padding-block: var(--space-8);
+  padding-block: var(--section-top) 0;
 }
 
 .section > :nth-child(2) {

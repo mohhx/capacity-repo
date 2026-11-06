@@ -1,7 +1,7 @@
 .section {
   display: grid;
   gap: 1.25rem;
-  padding-block: var(--space-8);
+  padding-block: var(--section-top-block) 0;
 }
 
 @media (min-width: 768px) {
