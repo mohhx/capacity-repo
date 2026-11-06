@@ -16,6 +16,27 @@
   align-content: start;
 }
 
+/* Hover and keyboard-focus glow (mint #19F0B4 at low opacity). Not in Figma; added at the owner's request. */
+@media (prefers-reduced-motion: no-preference) {
+  .panel {
+    transition:
+      border-color 400ms ease-out,
+      box-shadow 400ms ease-out;
+  }
+}
+
+.panel:focus-within {
+  border-color: var(--mint);
+  box-shadow: 0 0 24px rgba(25, 240, 180, 0.22);
+}
+
+@media (hover: hover) {
+  .panel:hover {
+    border-color: var(--mint);
+    box-shadow: 0 0 24px rgba(25, 240, 180, 0.22);
+  }
+}
+
 .title {
   margin: 0;
   font-size: var(--fs-h3);
