@@ -38,7 +38,7 @@
 .lead {
   margin: 0;
   font-size: var(--fs-lead);
-  color: var(--muted);
+  color: var(--white); /* CHANGED: white on phone, where the text sits on the photo */
 }
 
 .lead span {
@@ -86,12 +86,15 @@
     overflow: visible;
     border-radius: 0;
   }
+  .lead {
+    color: var(--muted); /* CHANGED: grey again once the text is no longer over the photo */
+  }
   .photo {
     position: relative;
     inset: auto;
     z-index: 0;
     order: 2;
-    min-height: 15rem;
+    min-height: 24rem; /* CHANGED: was 15rem, to match the taller tablet panel in Figma */
     overflow: hidden;
     border: var(--border-width) solid var(--border);
     border-radius: var(--radius-card);
