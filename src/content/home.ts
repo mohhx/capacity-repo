@@ -1,5 +1,4 @@
-// Home copy from Figma (desktop frame). Truck example replaces the Figma warehouse example
-// because the spec says logistics only. Numbers in `idle` are illustrative.
+// Home copy from Figma (desktop frame). Warehouse example as in Figma. Numbers in `idle` are illustrative.
 export const HOME = {
   hero: {
     eyebrow: "THE INVISIBLE INFRASTRUCTURE EXCHANGE",
@@ -20,11 +19,11 @@ export const HOME = {
   },
   idle: {
     title: "You buy the gap, not the asset.",
-    text: "A truck carrying 7 of its 10 tonnes can sell the other 3 on the same trip.",
-    vehicle: "Truck, 10 tonnes",
+    text: "A warehouse using 7,000 of 10,000 sq ft can list the other 3,000 sq ft for 14 days.",
+    asset: "Warehouse, 10,000 sq ft",
     usedPercent: 70,
-    usedLabel: "7 tonnes used",
-    idleLabel: "3 tonnes idle",
+    usedLabel: "7,000 used",
+    idleLabel: "3,000 idle",
   },
   how: {
     title: "How it will work",

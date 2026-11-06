@@ -4,7 +4,7 @@ import { HOME } from "@/content/home";
 import styles from "./UsedVsIdle.module.css";
 
 export function UsedVsIdle() {
-  const { title, text, vehicle, usedPercent, usedLabel, idleLabel } = HOME.idle;
+  const { title, text, asset, usedPercent, usedLabel, idleLabel } = HOME.idle;
   return (
     <section className={styles.section}>
       <Card className={styles.panel}>
@@ -14,8 +14,8 @@ export function UsedVsIdle() {
           <Badge>Illustrative</Badge>
         </div>
         <div className={styles.chart}>
-          <p className={styles.vehicle}>{vehicle}</p>
-          <div className={styles.bar} role="img" aria-label={`${vehicle}: ${usedLabel}, ${idleLabel}. Illustrative.`}>
+          <p className={styles.vehicle}>{asset}</p>
+          <div className={styles.bar} role="img" aria-label={`${asset}: ${usedLabel}, ${idleLabel}. Illustrative.`}>
             <span className={styles.used} style={{ width: `${usedPercent}%` }}>
               {usedLabel}
             </span>
