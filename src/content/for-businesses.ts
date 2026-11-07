@@ -18,4 +18,20 @@ export const FOR_BUSINESSES = {
       { label: "Dispute window", caption: "Set by CAPACITY" },
     ],
   },
+  pay: {
+    title: "What you pay",
+    intro: "The price shown on a listing is what you pay.",
+    tags: ["Illustrative", "TBC"],
+    rows: [
+      { label: "Price per tonne", value: "KSh 12,000" },
+      { label: "Quantity", value: "3 tonnes" },
+    ],
+    total: { label: "You pay", value: "KSh 36,000" },
+    methodsTitle: "Paying",
+    methods: [
+      { name: "Cards", note: "Both countries", tag: "NG · KE" },
+      { name: "Bank transfer", note: "Both countries", tag: "NG · KE" },
+      { name: "M-Pesa", note: "Kenya only", tag: "KE" },
+    ],
+  },
 } as const;

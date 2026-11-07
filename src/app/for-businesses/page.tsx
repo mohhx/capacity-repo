@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BookCards } from "@/components/home/BookCards";
+import { PayingSection } from "@/components/for-businesses/PayingSection";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Stepper } from "@/components/ui/Stepper";
@@ -25,6 +26,9 @@ export default function ForBusinessesPage() {
           <Stepper steps={steps.items} />
         </section>
       </PageHero>
+      <div className={`container ${styles.content}`}>
+        <PayingSection />
+      </div>
     </main>
   );
 }
