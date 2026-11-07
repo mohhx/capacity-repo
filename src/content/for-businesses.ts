@@ -34,4 +34,15 @@ export const FOR_BUSINESSES = {
       { name: "M-Pesa", note: "Kenya only", tag: "KE" },
     ],
   },
+  safety: {
+    title: "Staying safe",
+    items: [
+      "Verified providers",
+      "Payment held until delivery",
+      "Dispute support",
+      "Ratings and reviews",
+      "Prohibited goods are not carried",
+    ],
+    link: { label: "How we keep safe →", href: "/trust-and-safety" },
+  },
 } as const;
