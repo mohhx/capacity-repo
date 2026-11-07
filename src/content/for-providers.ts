@@ -15,4 +15,26 @@ export const FOR_PROVIDERS = {
       { id: "held", title: "Payment held until delivery", text: "Then it is paid out to you." },
     ],
   },
+  steps: {
+    title: "How it works for providers",
+    items: [
+      { label: "Apply" },
+      { label: "Get verified" },
+      { label: "List your space" },
+      { label: "Get booked" },
+      { label: "Deliver" },
+      { label: "Get paid" },
+    ],
+  },
+  apply: {
+    title: "What you need to apply",
+    items: [
+      "Government ID",
+      "Business registration",
+      "Business address that matches your listing",
+      "Payout account in the business's name",
+      // Wording not final: Figma tags this item TBC (a design note, not shown on the site).
+      "Vehicle papers (insurance certificate if you have one)",
+    ],
+  },
 } as const;

@@ -1,0 +1,40 @@
+.section {
+  display: grid;
+  gap: var(--space-8);
+  padding-top: var(--section-top-block);
+}
+
+@media (min-width: 900px) {
+  .section {
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--space-5);
+    align-items: start;
+  }
+}
+
+.col {
+  display: grid;
+  gap: var(--space-5);
+  align-content: start;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-5);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--white);
+  font-size: var(--fs-body);
+}
+
+.check {
+  flex: none;
+  color: var(--mint);
+}
