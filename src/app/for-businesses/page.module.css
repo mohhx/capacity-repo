@@ -1,0 +1,9 @@
+.steps {
+  display: grid;
+  gap: var(--section-heading-gap);
+  padding-top: var(--section-top-block);
+}
+
+.content {
+  padding-bottom: var(--space-16);
+}

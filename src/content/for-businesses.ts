@@ -7,4 +7,15 @@ export const FOR_BUSINESSES = {
     lead: "Space in a truck or van, for the time you need.",
     cta: { label: "Request early access", href: "/early-access" },
   },
+  steps: {
+    title: "How a booking works",
+    items: [
+      { label: "Request", caption: "Ask to book a listing" },
+      { label: "Provider confirms", caption: "Provider accepts" },
+      { label: "You pay", caption: "Card or bank transfer" },
+      { label: "Payment held", caption: "Until delivery" },
+      { label: "Delivery confirmed", caption: "You confirm arrival" },
+      { label: "Dispute window", caption: "Set by CAPACITY" },
+    ],
+  },
 } as const;
