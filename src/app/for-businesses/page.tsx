@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { BookCards } from "@/components/home/BookCards";
 import { PayingSection } from "@/components/for-businesses/PayingSection";
+import { BusinessFaq } from "@/components/for-businesses/BusinessFaq";
 import { SafetyPanel } from "@/components/for-businesses/SafetyPanel";
+import { ClosingCta } from "@/components/home/ClosingCta";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Stepper } from "@/components/ui/Stepper";
@@ -11,7 +13,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = { title: "For businesses" };
 
 export default function ForBusinessesPage() {
-  const { hero, steps } = FOR_BUSINESSES;
+  const { hero, steps, closing } = FOR_BUSINESSES;
   return (
     <main>
       <PageHero
@@ -30,6 +32,8 @@ export default function ForBusinessesPage() {
       <div className={`container ${styles.content}`}>
         <PayingSection />
         <SafetyPanel />
+        <BusinessFaq />
+        <ClosingCta title={closing.title} text={closing.text} cta={closing.cta} />
       </div>
     </main>
   );

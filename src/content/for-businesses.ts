@@ -45,4 +45,23 @@ export const FOR_BUSINESSES = {
     ],
     link: { label: "How we keep safe →", href: "/trust-and-safety" },
   },
+  faq: {
+    title: "Business FAQ",
+    items: [
+      {
+        id: "late",
+        question: "What if my goods are late, damaged or lost?",
+        answer: "The provider is responsible for cargo in transit. You can open a dispute with evidence.",
+      },
+      // TBC: the answers below are placeholders until the final text is supplied.
+      { id: "cancel", question: "Can I cancel a booking?", answer: "Answer to follow." },
+      { id: "pay", question: "How do I pay?", answer: "Answer to follow." },
+      { id: "prohibited", question: "What can I not ship?", answer: "Answer to follow." },
+    ],
+  },
+  closing: {
+    title: "Need space on a route?",
+    text: "Short form. No account or password.",
+    cta: { label: "Request early access", href: "/early-access" },
+  },
 } as const;
