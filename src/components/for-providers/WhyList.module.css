@@ -1,0 +1,44 @@
+.section {
+  display: grid;
+  gap: var(--section-heading-gap);
+  padding-top: var(--section-top);
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    gap: 1.25rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  height: 100%;
+}
+
+.icon {
+  display: block;
+  margin-bottom: var(--space-4);
+  color: var(--mint);
+}
+
+.cardTitle {
+  margin: 0 0 var(--space-1);
+  font-size: var(--fs-card-title);
+  font-weight: 700;
+  color: var(--white);
+}
+
+.cardText {
+  margin: 0;
+  font-size: var(--fs-small);
+  color: var(--muted);
+}
