@@ -16,7 +16,7 @@
 }
 .item:hover,
 .open {
-  border-color: #1f4757; /* estimated, verify */
+  border-color: var(--border-field);
 }
 
 .heading {

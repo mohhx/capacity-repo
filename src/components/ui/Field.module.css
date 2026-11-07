@@ -28,7 +28,7 @@
 }
 
 .input:hover:not(:disabled) {
-  border-color: #1f4757; /* estimated, verify against Figma 4:707 */
+  border-color: var(--border-field);
 }
 
 /* focus: mint border plus a soft ring (Figma 4:711) */

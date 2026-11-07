@@ -26,6 +26,7 @@
   --danger-bg: #2a1216;
   --blue: #1e90ff;
   --track: #12384a;
+  --border-field: #1f4757; /* estimated, verify against Figma 4:707 */
   --gradient-panel: linear-gradient(180deg, #0b2a4a 0%, #051520 100%);
   --gradient-bar: linear-gradient(90deg, #1e90ff 0%, #19f0b4 100%);
 
