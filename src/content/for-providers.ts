@@ -37,4 +37,10 @@ export const FOR_PROVIDERS = {
       "Vehicle papers (insurance certificate if you have one)",
     ],
   },
+  cost: {
+    title: "What it costs",
+    // Figma shows KSh 50,000. No Naira example exists yet (TBC), so both countries use this
+    // illustrative figure in their own currency symbol. It is not a conversion.
+    amount: 50000,
+  },
 } as const;
