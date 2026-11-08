@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FOR_PROVIDERS } from "@/content/for-providers";
+import { CostCard } from "./CostCard";
 import styles from "./ApplySection.module.css";
 
 function Check() {
@@ -18,7 +19,7 @@ export function ApplySection() {
     <section className={styles.section}>
       <div className={styles.col}>
         <SectionHeading>{apply.title}</SectionHeading>
-        <Card>
+        <Card className={styles.checklist}>
           <ul className={styles.list}>
             {apply.items.map((item) => (
               <li key={item} className={styles.item}>
@@ -28,6 +29,9 @@ export function ApplySection() {
             ))}
           </ul>
         </Card>
+      </div>
+      <div className={styles.col}>
+        <CostCard />
       </div>
     </section>
   );
