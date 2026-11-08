@@ -21,7 +21,7 @@ export const FOR_BUSINESSES = {
   pay: {
     title: "What you pay",
     intro: "The price shown on a listing is what you pay.",
-    tags: ["Illustrative", "TBC"],
+    tags: ["Illustrative"], // the Figma "TBC" tag is a design note, not live copy
     rows: [
       { label: "Price per tonne", value: "KSh 12,000" },
       { label: "Quantity", value: "3 tonnes" },
