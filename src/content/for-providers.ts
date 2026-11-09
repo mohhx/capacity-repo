@@ -72,4 +72,10 @@ export const FOR_PROVIDERS = {
     text: "Short form. No account or password.",
     cta: { label: "Apply to list capacity", href: "/apply" },
   },
+  // Removable module (Figma note: show only once the feature is live). Set enabled to false to hide it.
+  promote: {
+    enabled: true as boolean,
+    title: "Promote your listing",
+    options: ["24 hours", "1 week", "1 month"],
+  },
 } as const;

@@ -4,9 +4,53 @@
   padding-top: var(--section-top-block);
 }
 
-/* Desktop: the accordions take the left half, as in Figma (the right half is the removable "Promote" module, not shown). */
+.layout {
+  display: grid;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+/* Desktop: accordions on the left, the promote box on the right, starting level with the first accordion. */
 @media (min-width: 900px) {
-  .list {
-    max-width: calc(50% - 0.625rem);
+  .layout {
+    grid-template-columns: 1fr 1fr;
   }
+}
+
+/* Dashed outline, as in Figma. The pills are plain labels, not buttons, until the feature exists. */
+.promote {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  border: var(--border-width) dashed var(--border);
+  border-radius: var(--radius-card);
+}
+
+.promoteTitle {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.option {
+  display: grid;
+  place-items: center;
+  min-height: 2.75rem;
+  padding-inline: var(--space-3);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-pill);
+  color: var(--white);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  text-align: center;
 }
