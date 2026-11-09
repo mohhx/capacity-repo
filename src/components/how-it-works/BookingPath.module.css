@@ -56,20 +56,25 @@
   color: var(--mint);
 }
 
+/* Phone and tablet: the exit hangs off the step as an indented elbow, so the down arrow still reads as the main path. */
 .branch {
-  display: grid;
-  justify-items: center;
+  display: flex;
+  align-items: flex-start;
+  margin-left: var(--space-6);
 }
 
 .branchLine {
-  height: 2.5rem;
+  flex: none;
+  width: var(--space-5);
+  height: 1.375rem; /* half the branch box, so the elbow meets its middle */
   border-left: 1px dashed var(--muted);
+  border-bottom: 1px dashed var(--muted);
+  border-bottom-left-radius: var(--radius-field);
 }
 
 .branchBox {
   display: grid;
   place-items: center;
-  width: 100%;
   min-height: 2.75rem;
   padding: var(--space-2) var(--space-3);
   border: var(--border-width) solid var(--white);
@@ -83,6 +88,7 @@
 /* Disputes use the error colour for the outline and the dashed line. */
 .danger .branchLine {
   border-left-color: var(--danger);
+  border-bottom-color: var(--danger);
 }
 
 .danger .branchBox {
@@ -97,6 +103,26 @@
     column-gap: var(--path-gap);
     row-gap: 0;
     align-items: start;
+  }
+
+  /* Desktop: the exit hangs straight down from its step. */
+  .branch {
+    display: grid;
+    justify-items: center;
+    margin-left: 0;
+  }
+
+  .branchLine {
+    width: auto;
+    height: 2.5rem;
+    border-bottom: 0;
+    border-radius: 0;
+  }
+
+  .branchBox {
+    width: 100%;
+    min-height: 3.125rem;
+    padding-inline: var(--space-1);
   }
 
   .item:not(:last-child)::after {

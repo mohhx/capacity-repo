@@ -1,5 +1,6 @@
-// How it works page copy, from the Figma desktop frame (Providers tab).
+// How it works page copy, from the Figma desktop frames (Providers and Businesses tabs).
 import { commissionPercent } from "@/config/platform";
+import { PRIMARY_CTA, SECONDARY_CTA } from "@/content/site";
 
 export type Role = "provider" | "business";
 
@@ -9,12 +10,21 @@ export const HOW_IT_WORKS = {
     title: "One booking,",
     accent: "start to finish.",
   },
-  closing: {
+} as const;
+
+/** Closing panel per role. The button is the selected role's own action and the text points to the other role. */
+export const CLOSING: Record<Role, { title: string; text: string; cta: { label: string; href: string } }> = {
+  provider: {
     title: "Ready to start?",
     text: "Or request early access as a business.",
-    cta: { label: "Apply to list capacity", href: "/apply" },
+    cta: PRIMARY_CTA,
   },
-} as const;
+  business: {
+    title: "Ready to start?",
+    text: "Or apply to list capacity as a provider.",
+    cta: SECONDARY_CTA,
+  },
+};
 
 export const ROLE_TABS: readonly { id: Role; label: string }[] = [
   { id: "provider", label: "Providers" },
