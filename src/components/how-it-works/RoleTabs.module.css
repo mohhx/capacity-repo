@@ -1,0 +1,52 @@
+.tabs {
+  display: inline-flex;
+  padding: var(--space-1);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+}
+
+.tab {
+  min-width: 11rem;
+  min-height: 2.75rem;
+  padding-inline: var(--space-6);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--white);
+  font-size: var(--fs-body);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: var(--mint);
+}
+
+/* Active tab: filled mint with a soft mint glow (Design notes: active toggles glow). */
+.tab[aria-selected="true"] {
+  background: var(--mint);
+  color: var(--ink);
+  box-shadow: 0 0 16px rgba(25, 240, 180, 0.35);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tab {
+    transition:
+      background-color 400ms ease-out,
+      color 400ms ease-out,
+      box-shadow 400ms ease-out;
+  }
+}
+
+/* Phone: the toggle fills the width. */
+@media (max-width: 479px) {
+  .tabs {
+    display: flex;
+    width: 100%;
+  }
+  .tab {
+    flex: 1;
+    min-width: 0;
+  }
+}

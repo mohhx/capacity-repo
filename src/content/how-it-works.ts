@@ -1,0 +1,62 @@
+// How it works page copy, from the Figma desktop frame (Providers tab).
+import { commissionPercent } from "@/config/platform";
+
+export type Role = "provider" | "business";
+
+export const HOW_IT_WORKS = {
+  hero: {
+    eyebrow: "How it works",
+    title: "One booking,",
+    accent: "start to finish.",
+  },
+  closing: {
+    title: "Ready to start?",
+    text: "Or request early access as a business.",
+    cta: { label: "Apply to list capacity", href: "/apply" },
+  },
+} as const;
+
+export const ROLE_TABS: readonly { id: Role; label: string }[] = [
+  { id: "provider", label: "Providers" },
+  { id: "business", label: "Businesses" },
+];
+
+export interface PathStep {
+  id: string;
+  label: string;
+  note?: string;
+  highlight?: boolean;
+  branch?: { label: string; tone: "neutral" | "danger" };
+}
+
+export const PATH = {
+  title: "The booking path",
+  note: "Time windows are set by CAPACITY.",
+};
+
+export const PATH_STEPS: PathStep[] = [
+  { id: "requested", label: "Requested", branch: { label: "Declined or expired", tone: "neutral" } },
+  { id: "accepted", label: "Accepted" },
+  { id: "paid", label: "Paid (held)", branch: { label: "Cancelled (refund by tier)", tone: "neutral" } },
+  { id: "progress", label: "In progress", branch: { label: "Disputed (admin decides)", tone: "danger" } },
+  { id: "completed", label: "Completed" },
+  { id: "settled", label: "Settled", note: "(provider paid)", highlight: true },
+];
+
+export const WHO_DOES_WHAT = {
+  title: "Who does what",
+  columns: { step: "Step", provider: "Provider", business: "Business", capacity: "CAPACITY" },
+  rows: [
+    { step: "Requested", provider: "Reviews the request", business: "Asks to book", capacity: "Passes it on" },
+    { step: "Accepted", provider: "Confirms the booking", business: "Waits for confirmation", capacity: "Records it" },
+    { step: "Paid (held)", provider: "Waits for payment", business: "Pays the listed price", capacity: "Holds payment securely" },
+    { step: "In progress", provider: "Carries the goods", business: "Hands over goods", capacity: "Shows status updates" },
+    { step: "Completed", provider: "Marks delivery done", business: "Confirms delivery", capacity: "Starts the dispute window" },
+    {
+      step: "Settled",
+      provider: `Receives payout, less ${commissionPercent()}%`,
+      business: "Nothing more to do",
+      capacity: "Pays out",
+    },
+  ],
+};

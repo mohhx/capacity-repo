@@ -1,0 +1,111 @@
+/* Phone and tablet: a vertical list with down arrows. Desktop (1024px+): one row of six with right arrows. */
+.path {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+  max-width: 28rem;
+}
+
+.item {
+  position: relative;
+  display: grid;
+  align-content: start;
+}
+
+.item:not(:last-child)::after {
+  content: "↓";
+  margin-top: var(--space-3);
+  text-align: center;
+  color: var(--mint);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.box {
+  display: grid;
+  place-content: center;
+  gap: 2px;
+  min-height: 4rem;
+  padding: var(--space-3) var(--space-4);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  text-align: center;
+}
+
+.label {
+  font-size: var(--fs-body);
+  font-weight: 700;
+  color: var(--white);
+}
+
+.note {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* Last step: highlighted with a mint border and the highlight surface from the Design notes. */
+.highlight {
+  border: 1.5px solid var(--mint);
+  background: var(--highlight);
+}
+
+.highlight .label {
+  color: var(--mint);
+}
+
+.branch {
+  display: grid;
+  justify-items: center;
+}
+
+.branchLine {
+  height: 2.5rem;
+  border-left: 1px dashed var(--muted);
+}
+
+.branchBox {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-3);
+  border: var(--border-width) solid var(--white);
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Disputes use the error colour for the outline and the dashed line. */
+.danger .branchLine {
+  border-left-color: var(--danger);
+}
+
+.danger .branchBox {
+  border-color: var(--danger);
+}
+
+@media (min-width: 1024px) {
+  .path {
+    --path-gap: 2.25rem;
+    max-width: none;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    column-gap: var(--path-gap);
+    row-gap: 0;
+    align-items: start;
+  }
+
+  .item:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    top: 2rem;
+    right: calc(-1 * var(--path-gap));
+    width: var(--path-gap);
+    margin: 0;
+    transform: translateY(-50%);
+  }
+}
