@@ -13,6 +13,7 @@ import styles from "./HowItWorksView.module.css";
 export function HowItWorksView() {
   const [role, setRole] = useState<Role>("provider");
   const closing = CLOSING[role];
+  const other = CLOSING[role === "provider" ? "business" : "provider"];
   return (
     <div className={styles.view}>
       <div className={styles.tabs}>
@@ -31,7 +32,7 @@ export function HowItWorksView() {
           <RoleTable role={role} />
         </div>
       </section>
-      <ClosingCta title={closing.title} text={closing.text} cta={closing.cta} roomy />
+      <ClosingCta title={closing.title} text={closing.text} cta={closing.cta} textHref={other.cta.href} roomy />
     </div>
   );
 }

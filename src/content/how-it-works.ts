@@ -9,6 +9,7 @@ export const HOW_IT_WORKS = {
     eyebrow: "How it works",
     title: "One booking,",
     accent: "start to finish.",
+    subtitle: "The same path for every booking.",
   },
 } as const;
 

@@ -44,3 +44,16 @@
   display: block;
   color: var(--mint);
 }
+
+/* Phone only: the Figma phone frame has a subtitle under the headline, the desktop frame does not. */
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    display: none;
+  }
+}

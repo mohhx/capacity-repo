@@ -14,6 +14,7 @@ export default function HowItWorksPage() {
         <h1 className={styles.title}>
           {hero.title} <span className={styles.accent}>{hero.accent}</span>
         </h1>
+        <p className={styles.subtitle}>{hero.subtitle}</p>
       </div>
       <HowItWorksView />
     </main>
