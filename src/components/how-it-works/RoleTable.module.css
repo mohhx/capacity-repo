@@ -1,0 +1,72 @@
+.card {
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-panel);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+/* Phone: the table keeps its width and scrolls sideways inside the card. */
+.scroll {
+  overflow-x: auto;
+  padding: var(--space-3) var(--space-6);
+}
+
+.table {
+  width: 100%;
+  min-width: 40rem;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--fs-body);
+}
+
+.table th,
+.table td {
+  padding: var(--space-4) var(--space-3) var(--space-4) 0;
+  vertical-align: middle;
+}
+
+.table thead th {
+  border-bottom: var(--border-width) solid var(--border);
+  font-size: var(--fs-small);
+  font-weight: 700;
+}
+
+.table tbody tr:not(:last-child) > * {
+  border-bottom: var(--border-width) solid var(--border);
+}
+
+.headStep {
+  color: var(--muted);
+}
+
+.headRole {
+  color: var(--mint);
+}
+
+/* Figma uses blue here, but the Design notes keep blue for bars and shapes, so white is used. */
+.headCapacity {
+  color: var(--white);
+}
+
+.cellStep {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.cellProvider,
+.cellBusiness,
+.cellCapacity {
+  color: var(--white);
+}
+
+.table[data-role="provider"] td.cellBusiness,
+.table[data-role="business"] td.cellProvider {
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cellProvider,
+  .cellBusiness {
+    transition: color 400ms ease-out;
+  }
+}

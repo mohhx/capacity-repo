@@ -42,6 +42,7 @@ export function RoleTabs({ roles, value, onChange }: RoleTabsProps) {
             role="tab"
             id={`role-tab-${role.id}`}
             aria-selected={selected}
+            aria-controls="role-panel"
             tabIndex={selected ? 0 : -1}
             className={styles.tab}
             onClick={() => onChange(role.id)}
