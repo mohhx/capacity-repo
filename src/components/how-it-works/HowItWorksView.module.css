@@ -4,6 +4,7 @@
   --gap-note: var(--space-6);
   --gap-heading: var(--section-heading-gap);
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   align-content: start;
 }
 
@@ -29,6 +30,7 @@
 
 .block {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--gap-heading);
 }
 

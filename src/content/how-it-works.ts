@@ -36,7 +36,7 @@ export interface PathStep {
   label: string;
   note?: string;
   highlight?: boolean;
-  branch?: { label: string; tone: "neutral" | "danger" };
+  branch?: { label: string; detail: string; tone: "neutral" | "danger" };
 }
 
 export const PATH = {
@@ -45,10 +45,10 @@ export const PATH = {
 };
 
 export const PATH_STEPS: PathStep[] = [
-  { id: "requested", label: "Requested", branch: { label: "Declined or expired", tone: "neutral" } },
+  { id: "requested", label: "Requested", branch: { label: "Declined or", detail: "expired", tone: "neutral" } },
   { id: "accepted", label: "Accepted" },
-  { id: "paid", label: "Paid (held)", branch: { label: "Cancelled (refund by tier)", tone: "neutral" } },
-  { id: "progress", label: "In progress", branch: { label: "Disputed (admin decides)", tone: "danger" } },
+  { id: "paid", label: "Paid (held)", branch: { label: "Cancelled", detail: "(refund by tier)", tone: "neutral" } },
+  { id: "progress", label: "In progress", branch: { label: "Disputed", detail: "(admin decides)", tone: "danger" } },
   { id: "completed", label: "Completed" },
   { id: "settled", label: "Settled", note: "(provider paid)", highlight: true },
 ];
@@ -64,9 +64,9 @@ export const WHO_DOES_WHAT = {
     { step: "Completed", provider: "Marks delivery done", business: "Confirms delivery", capacity: "Starts the dispute window" },
     {
       step: "Settled",
-      provider: `Receives payout, less ${commissionPercent()}%`,
+      provider: "Receives the payout",
       business: "Nothing more to do",
-      capacity: "Pays out",
+      capacity: `Pays out, less ${commissionPercent()} percent`,
     },
   ],
 };
