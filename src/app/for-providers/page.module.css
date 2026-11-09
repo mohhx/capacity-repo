@@ -1,5 +1,5 @@
 .content {
-  padding-bottom: var(--space-16);
+  padding-bottom: 0; /* ClosingCta supplies its own bottom padding */
 }
 
 .steps {

@@ -43,4 +43,33 @@ export const FOR_PROVIDERS = {
     // illustrative figure in their own currency symbol. It is not a conversion.
     amount: 50000,
   },
+  responsibilities: {
+    title: "Your responsibilities",
+    items: [
+      {
+        id: "cargo",
+        question: "Cargo in transit is your responsibility",
+        answer: "You are the carrier. CAPACITY is the exchange, not the carrier.",
+      },
+      // TBC: the answers below are placeholders until the final text is supplied.
+      { id: "honour", question: "Honour confirmed bookings", answer: "Answer to follow." },
+      { id: "cancel", question: "Cancellations affect your visibility", answer: "Answer to follow." },
+    ],
+  },
+  faq: {
+    title: "Provider FAQ",
+    // TBC: all answers are placeholders until the final text is supplied.
+    // Order is row by row, so the two columns read: verified, cost | paid, not shipped (as in Figma).
+    items: [
+      { id: "verified", question: "How do I get verified?", answer: "Answer to follow." },
+      { id: "paid", question: "When and how do I get paid?", answer: "Answer to follow." },
+      { id: "cost", question: "How much does it cost?", answer: "Answer to follow." },
+      { id: "prohibited", question: "What can I not ship?", answer: "Answer to follow." },
+    ],
+  },
+  closing: {
+    title: "Ready to list your spare capacity?",
+    text: "Short form. No account or password.",
+    cta: { label: "Apply to list capacity", href: "/apply" },
+  },
 } as const;

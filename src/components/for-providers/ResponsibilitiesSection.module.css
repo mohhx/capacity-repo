@@ -1,0 +1,12 @@
+.section {
+  display: grid;
+  gap: var(--section-heading-gap);
+  padding-top: var(--section-top-block);
+}
+
+/* Desktop: the accordions take the left half, as in Figma (the right half is the removable "Promote" module, not shown). */
+@media (min-width: 900px) {
+  .list {
+    max-width: calc(50% - 0.625rem);
+  }
+}
