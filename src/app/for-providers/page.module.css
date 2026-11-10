@@ -1,0 +1,9 @@
+.content {
+  padding-bottom: 0; /* ClosingCta supplies its own bottom padding */
+}
+
+.steps {
+  display: grid;
+  gap: var(--section-heading-gap);
+  padding-top: var(--section-top);
+}

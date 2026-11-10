@@ -1,11 +1,25 @@
+/* Spacing follows the Figma desktop frame. Phones use the shared section spacing. */
 .view {
+  --gap-tabs: var(--space-6);
+  --gap-note: var(--space-6);
+  --gap-heading: var(--section-heading-gap);
   display: grid;
-  gap: var(--section-top-block);
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+}
+
+@media (min-width: 768px) {
+  .view {
+    --gap-tabs: 2.1875rem; /* tabs to "The booking path" */
+    --gap-note: 0.875rem; /* time-windows note to "Who does what" */
+    --gap-heading: 2.75rem; /* heading to its content */
+  }
 }
 
 /* The toggle fills the width on phones and sits at the left from 480px up. */
 .tabs {
   justify-self: stretch;
+  margin-bottom: var(--gap-tabs);
 }
 
 @media (min-width: 480px) {
@@ -16,7 +30,12 @@
 
 .block {
   display: grid;
-  gap: var(--section-heading-gap);
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--gap-heading);
+}
+
+.tableBlock {
+  margin-top: var(--gap-note);
 }
 
 .pathWrap {
@@ -27,5 +46,5 @@
 .note {
   margin: 0;
   color: var(--muted);
-  font-size: var(--fs-body);
+  font-size: var(--fs-small);
 }

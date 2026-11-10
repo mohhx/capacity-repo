@@ -1,5 +1,6 @@
 .page {
   display: grid;
+  grid-template-columns: minmax(0, 1fr); /* lets the page shrink to the screen */
   align-content: start;
   padding-top: var(--space-16);
   padding-bottom: 0; /* ClosingCta supplies its own bottom padding */
@@ -11,22 +12,48 @@
   padding-bottom: var(--space-8);
 }
 
+@media (min-width: 768px) {
+  .heading {
+    padding-bottom: 1.375rem; /* Figma: about 34px from the headline to the toggle */
+  }
+}
+
 .eyebrow {
   margin: 0;
   color: var(--mint);
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 700;
 }
 
+/* Figma sets this headline at 58px on desktop, a little under the shared hero size. */
 .title {
   margin: 0;
-  font-size: var(--fs-hero);
+  font-size: clamp(2.125rem, 6vw + 0.5rem, 3.625rem);
   font-weight: 700;
   line-height: 1.1;
   color: var(--white);
 }
 
+@media (min-width: 768px) {
+  .title {
+    line-height: 1.15;
+  }
+}
+
 .accent {
   display: block;
   color: var(--mint);
+}
+
+/* Phone only: the Figma phone frame has a subtitle under the headline, the desktop frame does not. */
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    display: none;
+  }
 }

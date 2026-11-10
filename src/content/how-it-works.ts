@@ -1,5 +1,6 @@
-// How it works page copy, from the Figma desktop frame (Providers tab).
+// How it works page copy, from the Figma desktop frames (Providers and Businesses tabs).
 import { commissionPercent } from "@/config/platform";
+import { PRIMARY_CTA, SECONDARY_CTA } from "@/content/site";
 
 export type Role = "provider" | "business";
 
@@ -8,13 +9,23 @@ export const HOW_IT_WORKS = {
     eyebrow: "How it works",
     title: "One booking,",
     accent: "start to finish.",
-  },
-  closing: {
-    title: "Ready to start?",
-    text: "Or request early access as a business.",
-    cta: { label: "Apply to list capacity", href: "/apply" },
+    subtitle: "The same path for every booking.",
   },
 } as const;
+
+/** Closing panel per role. The button is the selected role's own action and the text points to the other role. */
+export const CLOSING: Record<Role, { title: string; text: string; cta: { label: string; href: string } }> = {
+  provider: {
+    title: "Ready to start?",
+    text: "Or request early access as a business.",
+    cta: PRIMARY_CTA,
+  },
+  business: {
+    title: "Ready to start?",
+    text: "Or apply to list capacity as a provider.",
+    cta: SECONDARY_CTA,
+  },
+};
 
 export const ROLE_TABS: readonly { id: Role; label: string }[] = [
   { id: "provider", label: "Providers" },
@@ -26,7 +37,7 @@ export interface PathStep {
   label: string;
   note?: string;
   highlight?: boolean;
-  branch?: { label: string; tone: "neutral" | "danger" };
+  branch?: { label: string; detail: string; tone: "neutral" | "danger" };
 }
 
 export const PATH = {
@@ -35,10 +46,10 @@ export const PATH = {
 };
 
 export const PATH_STEPS: PathStep[] = [
-  { id: "requested", label: "Requested", branch: { label: "Declined or expired", tone: "neutral" } },
+  { id: "requested", label: "Requested", branch: { label: "Declined or", detail: "expired", tone: "neutral" } },
   { id: "accepted", label: "Accepted" },
-  { id: "paid", label: "Paid (held)", branch: { label: "Cancelled (refund by tier)", tone: "neutral" } },
-  { id: "progress", label: "In progress", branch: { label: "Disputed (admin decides)", tone: "danger" } },
+  { id: "paid", label: "Paid (held)", branch: { label: "Cancelled", detail: "(refund by tier)", tone: "neutral" } },
+  { id: "progress", label: "In progress", branch: { label: "Disputed", detail: "(admin decides)", tone: "danger" } },
   { id: "completed", label: "Completed" },
   { id: "settled", label: "Settled", note: "(provider paid)", highlight: true },
 ];
@@ -54,9 +65,9 @@ export const WHO_DOES_WHAT = {
     { step: "Completed", provider: "Marks delivery done", business: "Confirms delivery", capacity: "Starts the dispute window" },
     {
       step: "Settled",
-      provider: `Receives payout, less ${commissionPercent()}%`,
+      provider: "Receives the payout",
       business: "Nothing more to do",
-      capacity: "Pays out",
+      capacity: `Pays out, less ${commissionPercent()} percent`,
     },
   ],
 };

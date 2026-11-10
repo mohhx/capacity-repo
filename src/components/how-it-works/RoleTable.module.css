@@ -13,7 +13,7 @@
 
 .table {
   width: 100%;
-  min-width: 40rem;
+  min-width: 0;
   border-collapse: collapse;
   text-align: left;
   font-size: var(--fs-body);
@@ -43,9 +43,9 @@
   color: var(--mint);
 }
 
-/* Figma uses blue here, but the Design notes keep blue for bars and shapes, so white is used. */
+/* Blue as in the Figma frames (about 5.5:1 on the card surface). */
 .headCapacity {
-  color: var(--white);
+  color: var(--blue);
 }
 
 .cellStep {
@@ -68,5 +68,64 @@
   .cellProvider,
   .cellBusiness {
     transition: color 400ms ease-out;
+  }
+}
+
+/* Desktop: row height, card padding and column positions follow the Figma frame. */
+@media (min-width: 1024px) {
+  .scroll {
+    padding: 0 1.8125rem;
+  }
+
+  .table th,
+  .table td {
+    padding-block: 1.125rem;
+  }
+
+  .table thead th {
+    padding-top: 1.25rem;
+    padding-bottom: 0.875rem;
+  }
+
+  .table thead th:nth-child(1) {
+    width: 20%;
+  }
+
+  .table thead th:nth-child(2) {
+    width: 28%;
+  }
+
+  .table thead th:nth-child(3) {
+    width: 27%;
+  }
+
+  .table thead th:nth-child(4) {
+    width: 25%;
+  }
+}
+
+/* Tablet and up: the full four-column table. */
+@media (min-width: 768px) {
+  .table {
+    min-width: 40rem;
+  }
+}
+
+/* Phone: three columns (Step, the chosen role, CAPACITY), so nothing scrolls sideways. */
+@media (max-width: 767px) {
+  .scroll {
+    padding-inline: var(--space-5);
+  }
+
+  .table[data-role="provider"] thead th:nth-child(3),
+  .table[data-role="provider"] td.cellBusiness,
+  .table[data-role="business"] thead th:nth-child(2),
+  .table[data-role="business"] td.cellProvider {
+    display: none;
+  }
+
+  .table th,
+  .table td {
+    padding-right: var(--space-2);
   }
 }
