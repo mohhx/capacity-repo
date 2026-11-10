@@ -14,12 +14,14 @@ interface AccordionProps {
   items: AccordionItem[];
   /** Layout: single column, or two columns on desktop (Home FAQ teaser). */
   columns?: 1 | 2;
+  /** Id of the item that starts open. Omit to start with everything closed. */
+  defaultOpenId?: string;
   className?: string;
 }
 
-export function Accordion({ items, columns = 1, className }: AccordionProps) {
+export function Accordion({ items, columns = 1, defaultOpenId, className }: AccordionProps) {
   const base = useId();
-  const [openId, setOpenId] = useState<string | null>(null);
+  const [openId, setOpenId] = useState<string | null>(defaultOpenId ?? null);
 
   return (
     <ul className={`${styles.list} ${columns === 2 ? styles.two : ""} ${className ?? ""}`}>

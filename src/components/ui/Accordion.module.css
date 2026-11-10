@@ -14,9 +14,12 @@
   border-radius: var(--radius-card);
   transition: border-color 0.15s ease;
 }
-.item:hover,
-.open {
+.item:hover {
   border-color: var(--border-field);
+}
+/* Open item: mint border (Figma mobile frame). Written as .item.open so it still wins on hover. */
+.item.open {
+  border-color: var(--mint);
 }
 
 .heading {
