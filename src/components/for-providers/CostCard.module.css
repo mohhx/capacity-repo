@@ -59,3 +59,10 @@
   flex: 1;
   background: var(--blue);
 }
+
+/* Pricing page: split caption under the bar. */
+.split {
+  margin: var(--space-3) 0 0;
+  color: var(--muted);
+  font-size: var(--fs-small);
+}
