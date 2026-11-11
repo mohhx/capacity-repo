@@ -1,0 +1,85 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-5);
+}
+
+/* Desktop: two columns, as in the Figma 1440 frame. */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.25rem;
+    row-gap: var(--space-10);
+  }
+}
+
+/* Two classes so these win over Card's own padding and radius whatever the CSS order. */
+.grid .card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  padding: var(--space-4); /* estimated from the phone frame, verify against Figma */
+  border-radius: var(--radius-panel); /* estimated, verify against Figma */
+}
+
+@media (min-width: 768px) {
+  .grid .card {
+    padding: var(--space-8); /* estimated from the desktop frame */
+  }
+}
+
+.title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--white);
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: var(--fs-h3);
+  }
+}
+
+.accent {
+  color: var(--mint);
+}
+
+.text {
+  max-width: 24rem; /* estimated from the desktop frame */
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+}
+
+/* Country pills, the same look as the Home markets chips on phone. */
+.chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.chip {
+  padding: var(--space-2) var(--space-6);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--white);
+  font-size: var(--fs-body);
+  font-weight: 700;
+}
+
+/* Full-width card on desktop (Who is behind it). */
+@media (min-width: 768px) {
+  .grid .wide {
+    grid-column: 1 / -1;
+  }
+  .grid .wide .text {
+    max-width: 60rem;
+  }
+}
