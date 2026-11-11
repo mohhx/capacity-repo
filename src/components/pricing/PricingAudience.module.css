@@ -1,0 +1,47 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-6);
+}
+
+.title {
+  margin: 0;
+  color: var(--mint);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+}
+
+.list {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.item {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.label {
+  color: var(--white);
+  font-size: var(--fs-body);
+  font-weight: 700;
+}
+
+.text {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--fs-body);
+}

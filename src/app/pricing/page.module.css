@@ -1,0 +1,103 @@
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr); /* lets the page shrink to the screen */
+  align-content: start;
+  padding-top: var(--space-16);
+  padding-bottom: 0; /* ClosingCta supplies its own bottom padding */
+}
+
+.stack {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-16);
+  padding-bottom: 1.25rem; /* plus the closing panel's own top padding, about 60px as in Figma */
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-8);
+}
+
+/* Desktop: text on the left, the worked example card on the right. */
+@media (min-width: 1024px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 37.5rem;
+    gap: var(--space-16);
+    align-items: start;
+  }
+}
+
+.copy {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: var(--space-4);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--mint);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.125rem, 6vw + 0.5rem, 3.625rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--white);
+}
+
+@media (min-width: 768px) {
+  .title {
+    line-height: 1.15;
+  }
+}
+
+/* The second line is always on its own line, as in both Figma frames. */
+.accent {
+  display: block;
+  color: var(--mint);
+}
+
+.lead {
+  max-width: 34rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--fs-lead);
+}
+
+.actions {
+  padding-top: var(--space-4);
+}
+
+/* Phone: the button fills the width. */
+@media (max-width: 767px) {
+  .actions {
+    width: 100%;
+  }
+  .actions > a {
+    width: 100%;
+  }
+}
+
+.example {
+  display: grid;
+  gap: var(--space-4);
+}
+
+/* The "A worked example" heading is only in the phone frame. */
+.exampleTitle {
+  margin: 0;
+  color: var(--white);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+  .exampleTitle {
+    display: none;
+  }
+}

@@ -1,0 +1,65 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .single {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.promote {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  padding: var(--space-8);
+  border: var(--border-width) dashed var(--muted);
+  border-radius: var(--radius-card);
+}
+
+.cancel {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+}
+
+.title {
+  margin: 0;
+  color: var(--white);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+}
+
+.text {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--fs-body);
+}
+
+.chips {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding-inline: var(--space-2);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-pill);
+  color: var(--white);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  text-align: center;
+}
