@@ -1,0 +1,14 @@
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr); /* lets the page shrink to the screen */
+  align-content: start;
+  padding-top: var(--space-16);
+  padding-bottom: 0;
+}
+
+/* Desktop: the form card starts about 40px under the nav, as in Figma. */
+@media (min-width: 1200px) {
+  .page {
+    padding-top: var(--space-10);
+  }
+}

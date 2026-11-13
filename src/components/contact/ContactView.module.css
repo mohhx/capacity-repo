@@ -1,0 +1,14 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-10);
+}
+
+/* Desktop (Figma 1440): about 520px of text, an 80px gap, then a 600px form card. */
+@media (min-width: 1200px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 37.5rem);
+    column-gap: 5rem;
+    align-items: start;
+  }
+}

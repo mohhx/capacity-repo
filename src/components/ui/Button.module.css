@@ -75,3 +75,26 @@
     animation-duration: 1.6s;
   }
 }
+
+/* loading with a visible label (opt-in through loadingLabel): spinner beside the text, not dimmed */
+.busy {
+  gap: var(--space-3);
+}
+.busy:disabled {
+  opacity: 1;
+  cursor: progress;
+}
+.spinnerInline {
+  width: 18px;
+  height: 18px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinnerInline {
+    animation-duration: 1.6s;
+  }
+}
