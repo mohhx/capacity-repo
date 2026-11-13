@@ -43,8 +43,8 @@ export const SECONDARY_CTA: NavLink = { label: "Request early access", href: "/e
 
 export const FOOTER = {
   pages: [
-    { label: "For providers", href: "/providers" },
-    { label: "For businesses", href: "/businesses" },
+    { label: "For providers", href: "/for-providers" },
+    { label: "For businesses", href: "/for-businesses" },
     { label: "Markets", href: "/markets" },
   ] satisfies NavLink[],
   legal: [
