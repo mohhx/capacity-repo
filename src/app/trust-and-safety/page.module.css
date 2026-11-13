@@ -1,0 +1,12 @@
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr); /* lets the page shrink to the screen */
+  align-content: start;
+  padding-top: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding-top: 4.5rem;
+  }
+}
