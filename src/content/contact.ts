@@ -19,10 +19,10 @@ export const CONTACT = {
     emailLabel: "Email",
     phoneLabel: "Phone",
   },
-  // Figma has a dashed "optional WhatsApp button" design note (TBC). Off until a real number exists.
-  // To turn on: enabled true and href "https://wa.me/<number without + or spaces>".
+  // Optional WhatsApp button. enabled shows it. While href is empty it is NOT clickable.
+  // To make it clickable: set href to "https://wa.me/<number without + or spaces>".
   whatsapp: {
-    enabled: false as boolean,
+    enabled: true as boolean,
     label: "Chat on WhatsApp",
     href: "" as string,
   },
@@ -30,8 +30,16 @@ export const CONTACT = {
     title: "Send us a message",
     fields: {
       name: { label: "Name", placeholder: "Your name", error: "Enter your name." }, // error copy is DRAFT
-      email: { label: "Email", placeholder: "you@company.com", error: "Enter a valid email address." }, // DRAFT
-      topic: { label: "Topic", placeholder: "Partnership, press, question", error: "Choose a topic." }, // DRAFT
+      email: {
+        label: "Email",
+        placeholder: "you@company.com",
+        error: "Enter a valid email address.",
+      }, // DRAFT
+      topic: {
+        label: "Topic",
+        placeholder: "Partnership, press, question",
+        error: "Choose a topic.",
+      }, // DRAFT
       message: { label: "Message", placeholder: "How can we help?", error: "Write your message." }, // DRAFT
     },
     consentError: HOME_LOWER.route.consentError,

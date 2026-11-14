@@ -29,14 +29,26 @@ export function ContactInfo() {
             <ContactLine item={COMPANY.phoneKE} kind="tel" />
           </span>
         </Card>
-        {whatsapp.enabled && whatsapp.href ? (
+        {whatsapp.enabled ? (
           <li>
-            <a className={styles.whatsapp} href={whatsapp.href} target="_blank" rel="noopener noreferrer">
-              <span>{whatsapp.label}</span>
-              <span className={styles.arrow} aria-hidden="true">
-                →
-              </span>
-            </a>
+            {whatsapp.href ? (
+              <a
+                className={styles.whatsapp}
+                href={whatsapp.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>{whatsapp.label}</span>
+                <span className={styles.arrow} aria-hidden="true">
+                  →
+                </span>
+              </a>
+            ) : (
+              <div className={`${styles.whatsapp} ${styles.inactive}`}>
+                <span>{whatsapp.label}</span>
+                <span className="visually-hidden">(not available yet)</span>
+              </div>
+            )}
           </li>
         ) : null}
       </ul>
