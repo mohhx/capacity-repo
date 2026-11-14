@@ -1,0 +1,104 @@
+.head {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.back {
+  width: fit-content;
+  color: var(--mint);
+  font-size: var(--fs-body);
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--white);
+}
+
+.lead {
+  margin: 0;
+  max-width: 30rem;
+  font-size: var(--fs-lead);
+  color: var(--muted);
+}
+
+.next {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.nextTitle {
+  margin: 0;
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  color: var(--white);
+}
+
+/* Phone: a plain numbered list. From 768px each step is a card, as in the desktop frame. */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-5);
+}
+
+.list .step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--white);
+  font-size: var(--fs-card-title);
+}
+
+.num {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1.5px solid var(--mint);
+  border-radius: var(--radius-pill);
+  color: var(--mint);
+  font-weight: 700;
+}
+
+.footnote {
+  margin: 0;
+  font-size: var(--fs-small);
+  color: var(--muted);
+}
+
+.privacy {
+  color: var(--muted);
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .list {
+    gap: 0.75rem;
+  }
+
+  .list .step {
+    min-height: 3.75rem;
+    padding: var(--space-3) var(--space-5);
+    border: var(--border-width) solid var(--border);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+  }
+
+  /* The desktop frame has no privacy link here; the form has its own. */
+  .privacy {
+    display: none;
+  }
+}

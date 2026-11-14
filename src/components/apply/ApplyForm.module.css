@@ -1,0 +1,150 @@
+/* Two classes so these win over Card's own padding and radius whatever the CSS order. */
+.wrap .card {
+  padding: var(--space-6);
+  border-radius: var(--radius-panel);
+}
+
+@media (min-width: 768px) {
+  .wrap .card {
+    padding: var(--space-8);
+  }
+}
+
+.form {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.title {
+  margin: 0 0 var(--space-1);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  color: var(--white);
+}
+
+.pair {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 640px) {
+  .pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--space-6);
+  }
+}
+
+.routes {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.addRoute {
+  justify-self: start;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--mint);
+  font: inherit;
+  font-size: var(--fs-body);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.addRoute:hover {
+  text-decoration: underline;
+}
+
+.consent {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.consentLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: 0.8125rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.consentLabel span {
+  display: grid;
+}
+
+.checkbox {
+  flex: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: 1px;
+  accent-color: var(--mint);
+}
+
+.link {
+  color: var(--mint);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.error {
+  margin: 0;
+  font-size: var(--fs-small);
+  color: var(--danger);
+}
+
+.actions {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.note {
+  margin: 0;
+  font-size: var(--fs-small);
+  color: var(--muted);
+}
+
+/* The failed panel sits above the button. Email and phone are on separate lines, as in the phone frame. */
+.failed {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-5);
+  border: 1.5px solid var(--danger);
+  border-radius: var(--radius-sm);
+  background: var(--danger-bg);
+}
+
+.failedTitle {
+  margin: 0;
+  color: var(--danger);
+  font-size: var(--fs-card-title);
+  font-weight: 700;
+}
+
+.failedText {
+  margin: 0;
+  color: var(--white);
+  font-size: var(--fs-body);
+}
+
+.failedLines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-1);
+  color: var(--white);
+  font-size: 0.875rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.failedLines a {
+  color: inherit;
+  text-decoration: underline;
+}

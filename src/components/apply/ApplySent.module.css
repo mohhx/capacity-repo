@@ -1,0 +1,61 @@
+.sent {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-6);
+  padding-block: var(--space-8);
+  text-align: center;
+}
+
+.check {
+  color: var(--mint);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+  font-weight: 700;
+  color: var(--white);
+}
+
+.title:focus {
+  outline: none;
+}
+
+.text {
+  margin: 0;
+  max-width: 30rem;
+  font-size: var(--fs-lead);
+  color: var(--muted);
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 28rem;
+}
+
+.steps .step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  min-height: 3.5rem;
+  padding: var(--space-3) var(--space-5);
+  text-align: left;
+  color: var(--white);
+}
+
+.num {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1.5px solid var(--mint);
+  border-radius: var(--radius-pill);
+  color: var(--mint);
+  font-weight: 700;
+}

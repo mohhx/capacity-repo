@@ -1,0 +1,75 @@
+/* One box that looks like the other fields: the code select, a divider, then the number. */
+.box {
+  display: flex;
+  align-items: stretch;
+  min-height: 48px;
+  background: var(--ink);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-field);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.box:hover {
+  border-color: var(--border-field);
+}
+
+.box:focus-within {
+  border-color: var(--mint);
+  box-shadow: 0 0 0 3px var(--mint-soft);
+}
+
+.invalid,
+.invalid:hover {
+  border-color: var(--danger);
+}
+
+.invalid:focus-within {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px rgba(255, 138, 138, 0.18);
+}
+
+.dial {
+  flex: none;
+  width: 5.25rem;
+  padding: 0 var(--space-6) 0 var(--space-4);
+  appearance: none;
+  border: 0;
+  border-right: var(--border-width) solid var(--border);
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23ffffff'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-2) center;
+  background-size: 8px 5px;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dial option {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.number {
+  flex: 1;
+  min-width: 0;
+  padding: 0 var(--space-4);
+  border: 0;
+  background: transparent;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 0.84rem;
+}
+
+.number::placeholder {
+  color: var(--muted);
+  opacity: 0.8;
+}
+
+/* The box shows the focus ring, so the controls inside draw none of their own. */
+.dial:focus,
+.number:focus {
+  outline: none;
+}

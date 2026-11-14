@@ -1,0 +1,34 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "head"
+    "form"
+    "next";
+  gap: var(--space-6);
+}
+
+.head {
+  grid-area: head;
+}
+
+.form {
+  grid-area: form;
+}
+
+.next {
+  grid-area: next;
+}
+
+@media (min-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(0, 0.87fr) minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "head form"
+      "next form";
+    column-gap: 5rem;
+    row-gap: var(--space-12);
+    align-items: start;
+  }
+}
