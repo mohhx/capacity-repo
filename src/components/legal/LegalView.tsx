@@ -65,6 +65,7 @@ export function LegalView({ document }: { document: LegalDocument }) {
                 <>
                   {" "}
                   <ContactLine item={COMPANY.email} kind="mail" />
+                  {section.afterEmail}
                 </>
               )}
             </p>

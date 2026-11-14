@@ -23,6 +23,8 @@ export interface LegalSection {
   title: string;
   text: string;
   withEmail?: boolean;
+  /** Text shown straight after the email address, for example a full stop. */
+  afterEmail?: string;
 }
 
 export interface LegalDocument {
@@ -63,6 +65,33 @@ export const TERMS: LegalDocument = {
       title: "Contact",
       text: "Questions can be sent to",
       withEmail: true,
+    },
+  ],
+};
+
+// Text is copied from the Figma Privacy frame. It is placeholder text: the final wording comes from the lawyer.
+export const PRIVACY: LegalDocument = {
+  title: "Privacy notice",
+  lastUpdated: "date TBC",
+  version: "TBC",
+  placeholder: true,
+  sections: [
+    {
+      id: "what-we-collect",
+      title: "What we collect",
+      text: "When you fill in a form on this website, we receive the details you give us, such as your name, business, phone number and email.",
+    },
+    {
+      id: "how-we-use-it",
+      title: "How we use it",
+      text: "We use these details to contact you about CAPACITY and to understand which routes and services people need.",
+    },
+    {
+      id: "your-choices",
+      title: "Your choices",
+      text: "You can ask what we hold about you and ask us to correct or delete it. Write to",
+      withEmail: true,
+      afterEmail: ".",
     },
   ],
 };
