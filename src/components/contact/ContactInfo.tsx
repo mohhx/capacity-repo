@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/Card";
+import { Icon } from "@/components/ui/Icon";
 import { CONTACT } from "@/content/contact";
 import { COMPANY } from "@/content/site";
 import { ContactLine } from "./ContactLine";
@@ -38,14 +39,20 @@ export function ContactInfo() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span>{whatsapp.label}</span>
+                <span className={styles.labelGroup}>
+                  <Icon name="whatsapp" size={24} />
+                  <span>{whatsapp.label}</span>
+                </span>
                 <span className={styles.arrow} aria-hidden="true">
                   →
                 </span>
               </a>
             ) : (
               <div className={`${styles.whatsapp} ${styles.inactive}`}>
-                <span>{whatsapp.label}</span>
+                <span className={styles.labelGroup}>
+                  <Icon name="whatsapp" size={24} />
+                  <span>{whatsapp.label}</span>
+                </span>
                 <span className="visually-hidden">(not available yet)</span>
               </div>
             )}

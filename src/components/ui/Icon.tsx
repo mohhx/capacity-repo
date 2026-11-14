@@ -1,6 +1,9 @@
 import Image from "next/image";
 
-/** Brand icons (outline, mint, transparent PNG, 512 square) from the CAPACITY assets pack. */
+/**
+ * Brand icons (outline, mint, transparent PNG, 512 square) from the CAPACITY assets pack.
+ * "whatsapp" is the exception: the official green logo (Simple Icons), also a 512 square PNG.
+ */
 const ICONS = {
   "return-trips": "/icons/return-trips.png",
   "partial-loads": "/icons/partial-loads.png",
@@ -14,6 +17,7 @@ const ICONS = {
   "confirm-booking": "/icons/confirm-booking.png",
   "not-allowed": "/icons/not-allowed.png",
   information: "/icons/information.png",
+  whatsapp: "/icons/whatsapp.png",
 } as const;
 
 export type IconName = keyof typeof ICONS;

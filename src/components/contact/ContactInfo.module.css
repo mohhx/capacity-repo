@@ -96,6 +96,13 @@
   border-color: var(--mint-hover);
 }
 
+/* WhatsApp icon and label stay together on the left. */
+.labelGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
 /* Shown but not clickable yet: dimmed, no hover change, no arrow. */
 .inactive {
   opacity: 0.55;
