@@ -5,7 +5,13 @@ import { COUNTRIES, type CountryCode } from "@/config/platform";
 import { useCountry } from "./CountryProvider";
 import styles from "./CountrySwitch.module.css";
 
-export function CountrySwitch({ variant = "code" }: { variant?: "code" | "name" }) {
+export function CountrySwitch({
+  variant = "code",
+  direction = "up",
+}: {
+  variant?: "code" | "name";
+  direction?: "up" | "down";
+}) {
   const { country, setCountry } = useCountry();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -45,7 +51,7 @@ export function CountrySwitch({ variant = "code" }: { variant?: "code" | "name" 
       </button>
 
       {open ? (
-        <ul className={`${styles.list} ${variant === "name" ? styles.listUp : ""}`}>
+        <ul className={`${styles.list} ${direction === "up" ? styles.listUp : styles.listDown}`}>
           {Object.values(COUNTRIES).map((c) => (
             <li key={c.code}>
               <button
