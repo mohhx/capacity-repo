@@ -2,7 +2,6 @@
 // Items marked DRAFT have no copy in Figma.
 import { COUNTRIES } from "@/config/platform";
 import type { CountryCode } from "@/config/platform";
-import { HOME_LOWER } from "@/content/home-lower";
 
 const COUNTRY_ORDER: CountryCode[] = ["NG", "KE"];
 
@@ -38,19 +37,19 @@ export const APPLY = {
     title: "Apply to list capacity",
     fields: {
       // error copy is DRAFT: Figma only shows the "could not send" state
-      name: { label: "Full name", placeholder: "Your name", error: "Enter your name." },
-      business: { label: "Business name", placeholder: "Registered business", error: "Enter your business name." },
-      phone: { label: "Phone", placeholder: "801 234 5678", error: "Enter a valid phone number." },
-      email: { label: "Email", placeholder: "you@company.com", error: "Enter a valid email address." },
-      country: { label: "Country", placeholder: "Nigeria or Kenya", error: "Choose a country." },
-      offer: { label: "What you offer", placeholder: "Truck, van, refrigerated, other", error: "Choose what you offer." },
+      name: { label: "Full name", placeholder: "Your name", error: "Enter your name" },
+      business: { label: "Business name", placeholder: "Registered business", error: "Enter your business name" },
+      phone: { label: "Phone", placeholder: "801 234 5678", error: "Enter a valid phone number" },
+      email: { label: "Email", placeholder: "you@company.com", error: "Enter a valid email, like name@company.com" },
+      country: { label: "Country", placeholder: "Nigeria or Kenya", error: "Choose a country" },
+      offer: { label: "What you offer", placeholder: "Truck, van, refrigerated, other", error: "Choose what you offer" },
       routeFrom: { label: "Route from", placeholder: "e.g. Nyeri" },
       routeTo: { label: "Route to", placeholder: "e.g. Nairobi" },
-      capacity: { label: "Typical spare capacity", placeholder: "e.g. 3 tonnes on return", error: "Tell us your typical spare capacity." },
+      capacity: { label: "Typical spare capacity", placeholder: "e.g. 3 tonnes on return", error: "Tell us your typical spare capacity" },
     },
-    routesError: "Enter where you travel from and to.",
+    routesError: "Enter where you travel from and to",
     addRoute: "+ Add another route (up to three)",
-    consentError: HOME_LOWER.route.consentError,
+    consentError: "Please agree to continue",
     submit: "Apply to list capacity",
     sending: "Sending…",
     retry: "Try again",
