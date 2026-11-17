@@ -1,0 +1,65 @@
+.group {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  padding: 0;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.pill {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  min-height: 2.75rem;
+  padding-inline: var(--space-5);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--white);
+  font-size: var(--fs-body);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* The radio fills the pill and is invisible, so the whole pill is the click target. */
+.input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.pill:hover {
+  border-color: var(--border-field);
+}
+
+.pill:has(.input:checked) {
+  border-color: var(--mint);
+  background: var(--mint-soft);
+}
+
+.pill:has(.input:focus-visible) {
+  outline: 2px solid var(--mint);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pill {
+    transition:
+      border-color 400ms ease-out,
+      background-color 400ms ease-out;
+  }
+}
