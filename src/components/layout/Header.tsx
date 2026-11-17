@@ -60,7 +60,7 @@ export function Header() {
           </nav>
 
           <div className={styles.actions}>
-            <CountrySwitch />
+            <CountrySwitch direction="down" />
             <Button href={PRIMARY_CTA.href} size="sm" className={styles.cta}>
               {PRIMARY_CTA.label}
             </Button>
