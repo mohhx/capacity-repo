@@ -95,3 +95,28 @@ export const PRIVACY: LegalDocument = {
     },
   ],
 };
+
+// Text is copied from the Figma Cookie notice frame. It is placeholder text: the final wording comes from the lawyer.
+export const COOKIES: LegalDocument = {
+  title: "Cookie notice",
+  lastUpdated: "date TBC",
+  version: "TBC",
+  placeholder: true,
+  sections: [
+    {
+      id: "what-cookies-are",
+      title: "What cookies are",
+      text: "Cookies are small files a website stores on your device.",
+    },
+    {
+      id: "which-we-use",
+      title: "Which we use",
+      text: "The cookies this site uses will be listed here.",
+    },
+    {
+      id: "your-choices",
+      title: "Your choices",
+      text: "Controls for your choices will be described here.",
+    },
+  ],
+};
