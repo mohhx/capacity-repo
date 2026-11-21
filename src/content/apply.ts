@@ -1,9 +1,9 @@
 // Apply page copy, from the Figma desktop frames (default and failed) and the phone frame (failed).
 // Items marked DRAFT have no copy in Figma.
-import { COUNTRIES } from "@/config/platform";
+import { ACTIVE_COUNTRIES, COUNTRIES } from "@/config/platform";
 import type { CountryCode } from "@/config/platform";
 
-const COUNTRY_ORDER: CountryCode[] = ["NG", "KE"];
+const COUNTRY_ORDER: readonly CountryCode[] = ACTIVE_COUNTRIES;
 
 export const APPLY_COUNTRIES = COUNTRY_ORDER.map((code) => ({ value: code, label: COUNTRIES[code].name }));
 
@@ -41,7 +41,7 @@ export const APPLY = {
       business: { label: "Business name", placeholder: "Registered business", error: "Enter your business name" },
       phone: { label: "Phone", placeholder: "801 234 5678", error: "Enter a valid phone number" },
       email: { label: "Email", placeholder: "you@company.com", error: "Enter a valid email, like name@company.com" },
-      country: { label: "Country", placeholder: "Nigeria or Kenya", error: "Choose a country" },
+      country: { label: "Country", placeholder: "Nigeria", error: "Choose a country" },
       offer: { label: "What you offer", placeholder: "Truck, van, refrigerated, other", error: "Choose what you offer" },
       routeFrom: { label: "Route from", placeholder: "e.g. Nyeri" },
       routeTo: { label: "Route to", placeholder: "e.g. Nairobi" },
