@@ -12,10 +12,12 @@ interface StatusPageProps {
   extra?: ReactNode;
   /** Buttons and links. */
   actions: ReactNode;
+  /** Keep the actions in a column on every size (the error page). */
+  stacked?: boolean;
 }
 
 /** Shared layout for the 404 and error pages. The header and footer come from the root layout. */
-export function StatusPage({ mark, tone = "muted", title, text, extra, actions }: StatusPageProps) {
+export function StatusPage({ mark, tone = "muted", title, text, extra, actions, stacked = false }: StatusPageProps) {
   return (
     <main className={`container ${styles.page}`}>
       <div className={`${styles.circle} ${tone === "mint" ? styles.mint : ""}`} aria-hidden="true">
@@ -24,7 +26,7 @@ export function StatusPage({ mark, tone = "muted", title, text, extra, actions }
       <h1 className={styles.title}>{title}</h1>
       <p className={styles.text}>{text}</p>
       {extra}
-      <div className={styles.actions}>{actions}</div>
+      <div className={`${styles.actions} ${stacked ? styles.stacked : ""}`}>{actions}</div>
     </main>
   );
 }
