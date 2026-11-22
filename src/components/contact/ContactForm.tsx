@@ -36,9 +36,7 @@ function FailedPanel() {
           {info.emailLabel}: <ContactLine item={COMPANY.email} kind="mail" />
         </li>
         <li>
-          {info.phoneLabel}: <ContactLine item={COMPANY.phoneNG} kind="tel" /> (NG)
-          <span aria-hidden="true"> · </span>
-          <ContactLine item={COMPANY.phoneKE} kind="tel" /> (KE)
+          {info.phoneLabel}: <ContactLine item={COMPANY.phoneNG} kind="tel" />
         </li>
       </ul>
     </div>

@@ -1,10 +1,9 @@
 import { Card } from "@/components/ui/Card";
-import { COUNTRIES } from "@/config/platform";
-import type { CountryCode } from "@/config/platform";
+import { ACTIVE_COUNTRIES, COUNTRIES } from "@/config/platform";
 import { ABOUT } from "@/content/about";
 import styles from "./AboutCards.module.css";
 
-const ORDER: CountryCode[] = ["NG", "KE"];
+const ORDER = ACTIVE_COUNTRIES;
 
 export function AboutCards() {
   const { why, layer, team, operate, company } = ABOUT;

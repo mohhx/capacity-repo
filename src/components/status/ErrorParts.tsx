@@ -24,10 +24,7 @@ export function ErrorContact() {
           {contact.emailLabel} <ContactLine item={COMPANY.email} kind="mail" />
         </li>
         <li>
-          {contact.phoneLabel} <ContactLine item={COMPANY.phoneNG} kind="tel" /> (NG)
-        </li>
-        <li>
-          <ContactLine item={COMPANY.phoneKE} kind="tel" /> (KE)
+          {contact.phoneLabel} <ContactLine item={COMPANY.phoneNG} kind="tel" />
         </li>
       </ul>
     </div>

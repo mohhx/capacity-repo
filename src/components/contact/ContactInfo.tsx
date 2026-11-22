@@ -26,8 +26,6 @@ export function ContactInfo() {
           <span className={styles.label}>{info.phoneLabel}</span>
           <span className={styles.value}>
             <ContactLine item={COMPANY.phoneNG} kind="tel" />
-            <span aria-hidden="true"> · </span>
-            <ContactLine item={COMPANY.phoneKE} kind="tel" />
           </span>
         </Card>
         {whatsapp.enabled ? (

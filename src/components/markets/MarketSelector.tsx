@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 import type { CountryCode } from "@/config/platform";
-import { COUNTRIES } from "@/config/platform";
+import { ACTIVE_COUNTRIES, COUNTRIES } from "@/config/platform";
 import styles from "./MarketSelector.module.css";
 
-const MARKET_CODES: CountryCode[] = ["NG", "KE"];
+const MARKET_CODES: readonly CountryCode[] = ACTIVE_COUNTRIES;
 
 export function MarketSelector() {
   const [activeCountry, setActiveCountry] = useState<CountryCode>("NG");
