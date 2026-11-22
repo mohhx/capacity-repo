@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { ClosingCta } from "@/components/home/ClosingCta";
 import { MarketCard } from "@/components/markets/MarketCard";
 import { MarketSelector } from "@/components/markets/MarketSelector";
+import { ACTIVE_COUNTRIES } from "@/config/platform";
 import { MARKETS } from "@/content/markets";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Markets",
   description:
-    "Discover the markets where CAPACITY is building a smarter infrastructure exchange, starting with Nigeria and Kenya.",
+    "Discover the markets where CAPACITY is building a smarter infrastructure exchange, starting with Nigeria.",
 };
 
 export default function MarketsPage() {
@@ -29,10 +30,10 @@ export default function MarketsPage() {
         </section>
 
         <section className={styles.markets} aria-label="Available markets">
-          <MarketSelector />
+          {ACTIVE_COUNTRIES.length > 1 ? <MarketSelector /> : null}
 
           <div className={styles.grid}>
-            {countries.map((market) => (
+            {countries.filter((market) => ACTIVE_COUNTRIES.includes(market.code)).map((market) => (
               <MarketCard
                 key={market.code}
                 code={market.code}

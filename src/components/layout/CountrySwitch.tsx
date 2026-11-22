@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { COUNTRIES, type CountryCode } from "@/config/platform";
+import { ACTIVE_COUNTRIES, COUNTRIES, type CountryCode } from "@/config/platform";
 import { useCountry } from "./CountryProvider";
 import styles from "./CountrySwitch.module.css";
 
@@ -37,6 +37,9 @@ export function CountrySwitch({
     setOpen(false);
   };
 
+  // One live country means nothing to choose, so the switch hides itself.
+  if (ACTIVE_COUNTRIES.length < 2) return null;
+
   return (
     <div className={styles.root} ref={rootRef}>
       <button
@@ -52,7 +55,7 @@ export function CountrySwitch({
 
       {open ? (
         <ul className={`${styles.list} ${direction === "up" ? styles.listUp : styles.listDown}`}>
-          {Object.values(COUNTRIES).map((c) => (
+          {ACTIVE_COUNTRIES.map((code) => COUNTRIES[code]).map((c) => (
             <li key={c.code}>
               <button
                 type="button"

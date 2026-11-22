@@ -32,7 +32,7 @@ export const PRICING = {
       title: "For businesses",
       items: [
         { label: "What you pay", text: "The price shown on the listing." },
-        { label: "How you pay", text: "Cards and bank transfer in both countries. M-Pesa in Kenya." },
+        { label: "How you pay", text: "Cards and bank transfer." },
       ],
     },
   ],
@@ -40,7 +40,7 @@ export const PRICING = {
   promote: {
     enabled: FOR_PROVIDERS.promote.enabled,
     title: "Promoted listings",
-    text: "Prices per duration and country.",
+    text: "Prices per duration.",
     options: FOR_PROVIDERS.promote.options,
   },
   cancellations: {

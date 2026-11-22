@@ -18,7 +18,7 @@ export interface FaqGroup {
 const TBC = "Answer to follow.";
 
 const COUNTRIES_ANSWER =
-  "We are launching in Nigeria and Kenya. Businesses pay by card or bank transfer in both countries, and in Kenya also by M-Pesa. Nigeria uses NGN and Kenya uses KES.";
+  "We are launching in Nigeria. Businesses pay in naira (NGN) by card or bank transfer.";
 
 export const FAQ = {
   hero: {
@@ -36,10 +36,15 @@ export const FAQ = {
             id: "what",
             question: "What is CAPACITY and who is it for?",
             answer:
-              "CAPACITY is a marketplace for unused business capacity. Providers list spare space in a truck or van; businesses book the part they need.",
+              "CAPACITY is a marketplace for unused business capacity. Providers list spare space in a truck; businesses book the part they need.",
           },
           { id: "countries", question: "Which countries and payment methods are supported?", answer: COUNTRIES_ANSWER },
-          { id: "sole", question: "Is it only for companies, or can sole traders join?", answer: TBC },
+          {
+            id: "sole",
+            question: "Is it only for companies, or can sole traders join?",
+            answer:
+              "CAPACITY is for businesses. That includes sole traders with a registered business name. You will need your business registration and a government ID. Individuals without a registered business cannot join yet.",
+          },
         ],
         business: [
           {
@@ -48,7 +53,12 @@ export const FAQ = {
             answer: "CAPACITY is a marketplace for unused business capacity. Book exactly the space and time you need.",
           },
           { id: "countries", question: "Which countries and payment methods are supported?", answer: COUNTRIES_ANSWER },
-          { id: "sole", question: "Is it only for companies, or can sole traders join?", answer: TBC },
+          {
+            id: "sole",
+            question: "Is it only for companies, or can sole traders join?",
+            answer:
+              "Any registered business can book, including sole traders with a registered business name. Individuals without a registered business cannot book yet.",
+          },
         ],
       },
     },

@@ -4,9 +4,8 @@
 // DRAFT: the frame only shows the placeholder "Type of goods or space".
 export const EARLY_NEEDS = [
   { value: "goods", label: "General goods" },
-  { value: "refrigerated", label: "Refrigerated goods" },
   { value: "partial", label: "Partial load" },
-  { value: "storage", label: "Warehouse or storage space" },
+  { value: "return", label: "Return trip space" },
   { value: "other", label: "Other" },
 ] as const;
 
@@ -35,7 +34,7 @@ export const EARLY = {
       business: { label: "Business name", placeholder: "Registered business", error: "Enter your business name" }, // DRAFT error
       phone: { label: "Phone", placeholder: "801 234 5678", error: "Enter a valid phone number" },
       email: { label: "Email", placeholder: "you@company.com", error: "Enter a valid email, like name@company.com" },
-      country: { label: "Country", placeholder: "Nigeria or Kenya", error: "Choose a country" }, // DRAFT error
+      country: { label: "Country", placeholder: "Nigeria", error: "Choose a country" }, // DRAFT error
       route: { label: "Route or location needed", placeholder: "From and to", error: "Enter your route or location" }, // DRAFT error
       need: { label: "What you ship or need", placeholder: "Type of goods or space", error: "Choose what you ship or need" }, // DRAFT error
       frequency: { label: "How often", error: "Choose how often" }, // optional field; the error only shows if the value was tampered with

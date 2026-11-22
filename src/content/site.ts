@@ -12,8 +12,8 @@ export const SITE = {
   name: "CAPACITY",
   tagline: "The invisible infrastructure exchange",
   description:
-    "Turn idle infrastructure into opportunity. Empty return trips and idle space, now bookable. Launching in Nigeria and Kenya.",
-  launchMarkets: "Nigeria and Kenya",
+    "Turn idle infrastructure into opportunity. Empty return trips and idle space, now bookable. Launching in Nigeria.",
+  launchMarkets: "Nigeria",
 } as const;
 
 export const NAV_LINKS: NavLink[] = [

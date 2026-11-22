@@ -5,9 +5,9 @@ export const MARKETS = {
   hero: {
     eyebrow: "OUR MARKETS",
     title: "Launching in",
-    accent: "Nigeria and Kenya.",
+    accent: "Nigeria.",
     description:
-      "CAPACITY is building a smarter way to use infrastructure across Africa, starting with two markets.",
+      "CAPACITY is building a smarter way to use infrastructure across Africa, starting with Nigeria.",
   },
 
   countries: [

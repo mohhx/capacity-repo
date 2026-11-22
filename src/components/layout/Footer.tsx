@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ACTIVE_COUNTRIES, COUNTRIES } from "@/config/platform";
 import { COMPANY, FOOTER, SITE } from "@/content/site";
 import { Logo } from "@/components/ui/Logo";
 import styles from "./Footer.module.css";
@@ -38,7 +39,7 @@ export function Footer() {
         <div className={styles.brand}>
           <Logo />
           <p className={styles.muted}>{COMPANY.legalName.value}</p>
-          <p className={styles.muted}>Nigeria · Kenya</p>
+          <p className={styles.muted}>{ACTIVE_COUNTRIES.map((code) => COUNTRIES[code].name).join(" · ")}</p>
         </div>
 
         <nav aria-label="Footer pages" className={styles.col}>
@@ -71,9 +72,6 @@ export function Footer() {
             </li>
             <li>
               <ContactLine item={COMPANY.phoneNG} kind="tel" />
-            </li>
-            <li>
-              <ContactLine item={COMPANY.phoneKE} kind="tel" />
             </li>
           </ul>
         </div>

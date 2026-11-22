@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useMemo, useSyncExternalStore } from "react";
-import { COUNTRIES, DEFAULT_COUNTRY, type Country, type CountryCode } from "@/config/platform";
+import { ACTIVE_COUNTRIES, COUNTRIES, DEFAULT_COUNTRY, type Country, type CountryCode } from "@/config/platform";
 
 const STORAGE_KEY = "capacity:country";
 
@@ -21,7 +21,7 @@ const listeners = new Set<() => void>();
 let memoryChoice: CountryCode | null = null; // used when storage is blocked
 
 function isCode(value: string | null): value is CountryCode {
-  return value === "NG" || value === "KE";
+  return value !== null && (ACTIVE_COUNTRIES as readonly string[]).includes(value);
 }
 
 function subscribe(onChange: () => void) {
@@ -40,7 +40,7 @@ function getSnapshot(): CountryCode {
   } catch {
     // storage can be blocked; fall through to the in-memory choice
   }
-  return memoryChoice ?? DEFAULT_COUNTRY;
+  return memoryChoice !== null && isCode(memoryChoice) ? memoryChoice : DEFAULT_COUNTRY;
 }
 
 function getServerSnapshot(): CountryCode {

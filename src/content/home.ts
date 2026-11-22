@@ -1,10 +1,10 @@
-// Home copy from Figma (desktop frame). Warehouse example as in Figma. Numbers in `idle` are illustrative.
+// Home copy from Figma (desktop frame). The idle panel uses a truck example because storage is off for the pilot (spec v0.3, D39). Numbers in `idle` are illustrative.
 export const HOME = {
   hero: {
     eyebrow: "THE INVISIBLE INFRASTRUCTURE EXCHANGE",
     titleLines: ["Turn idle infrastructure"],
     titleAccent: "into opportunity.",
-    lead: ["Empty return trips and idle space, now bookable.", "Launching in Nigeria and Kenya."],
+    lead: ["Empty return trips and idle space, now bookable.", "Launching in Nigeria."],
     primaryCta: { label: "List your spare capacity", href: "/apply" },
     secondaryCta: { label: "Request early access", href: "/early-access" },
   },
@@ -13,17 +13,15 @@ export const HOME = {
     items: [
       { id: "return", icon: "return-trips", title: "Return trips", text: "Empty legs, sold" },
       { id: "partial", icon: "partial-loads", title: "Partial loads", text: "Book only your part" },
-      { id: "cold", icon: "refrigerated", title: "Refrigerated", text: "Cold-chain space" },
-      { id: "vans", icon: "vans", title: "Vans", text: "Smaller loads" },
     ],
   },
   idle: {
     title: "You buy the gap, not the asset.",
-    text: "A warehouse using 7,000 of 10,000 sq ft can list the other 3,000 sq ft for 14 days.",
-    asset: "Warehouse, 10,000 sq ft",
+    text: "A truck carrying 7 of its 10 tonnes can sell the other 3 on the same trip.",
+    asset: "Truck, 10 tonnes",
     usedPercent: 70,
-    usedLabel: "7,000 used",
-    idleLabel: "3,000 idle",
+    usedLabel: "7 tonnes used",
+    idleLabel: "3 tonnes idle",
   },
   how: {
     title: "How it will work",
@@ -59,6 +57,6 @@ export const HOME = {
     ],
   },
   markets: {
-    title: "Launching in Nigeria and Kenya",
+    title: "Launching in Nigeria",
   },
 } as const;

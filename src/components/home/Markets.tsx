@@ -1,12 +1,11 @@
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { COUNTRIES } from "@/config/platform";
-import type { CountryCode } from "@/config/platform";
+import { ACTIVE_COUNTRIES, COUNTRIES } from "@/config/platform";
 import { HOME } from "@/content/home";
 import { LAUNCH_ROUTES } from "@/content/site";
 import styles from "./Markets.module.css";
 
-const ORDER: CountryCode[] = ["NG", "KE"];
+const ORDER = ACTIVE_COUNTRIES;
 
 /** "Cards", "Bank transfer", "M-Pesa" -> "Cards, bank transfer and M-Pesa" */
 function listMethods(methods: readonly string[]): string {

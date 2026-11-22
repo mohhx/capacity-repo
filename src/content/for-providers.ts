@@ -74,7 +74,7 @@ export const FOR_PROVIDERS = {
   },
   // Removable module (Figma note: show only once the feature is live). Set enabled to false to hide it.
   promote: {
-    enabled: true as boolean,
+    enabled: false as boolean, // promotions are off at launch (O7). Set true to show the Promote box and the Pricing block.
     title: "Promote your listing",
     options: ["24 hours", "1 week", "1 month"],
   },

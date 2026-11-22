@@ -43,6 +43,12 @@ export const COUNTRIES: Record<CountryCode, Country> = {
 
 export const DEFAULT_COUNTRY: CountryCode = "NG";
 
+/**
+ * Countries that are live. The pilot is Nigeria only (spec v0.3, D18). Kenya stays defined above, so it returns by
+ * adding "KE" here. Anything that lists countries reads this list.
+ */
+export const ACTIVE_COUNTRIES: readonly CountryCode[] = ["NG"];
+
 export const PLATFORM = {
   /** D11: fixed 10 percent, deducted from the provider's payout. Stored as a fraction. */
   commissionRate: { value: 0.1, status: "confirmed" as Status, ref: "D11, PAY-03" },

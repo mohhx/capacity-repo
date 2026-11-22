@@ -1,9 +1,9 @@
 // Apply page copy, from the Figma desktop frames (default and failed) and the phone frame (failed).
 // Items marked DRAFT have no copy in Figma.
-import { COUNTRIES } from "@/config/platform";
+import { ACTIVE_COUNTRIES, COUNTRIES } from "@/config/platform";
 import type { CountryCode } from "@/config/platform";
 
-const COUNTRY_ORDER: CountryCode[] = ["NG", "KE"];
+const COUNTRY_ORDER: readonly CountryCode[] = ACTIVE_COUNTRIES;
 
 export const APPLY_COUNTRIES = COUNTRY_ORDER.map((code) => ({ value: code, label: COUNTRIES[code].name }));
 
@@ -15,9 +15,8 @@ export const APPLY_DIAL_OPTIONS = COUNTRY_ORDER.map((code) => ({
 
 // DRAFT: Figma's placeholder says "Truck, van, refrigerated, other" and the error frame shows "Refrigerated truck".
 export const APPLY_OFFERS = [
-  { value: "truck", label: "Truck" },
-  { value: "van", label: "Van" },
-  { value: "refrigerated", label: "Refrigerated truck" },
+  { value: "return-trip", label: "Return trip" },
+  { value: "partial-load", label: "Partial load" },
   { value: "other", label: "Other" },
 ] as const;
 
@@ -41,8 +40,8 @@ export const APPLY = {
       business: { label: "Business name", placeholder: "Registered business", error: "Enter your business name" },
       phone: { label: "Phone", placeholder: "801 234 5678", error: "Enter a valid phone number" },
       email: { label: "Email", placeholder: "you@company.com", error: "Enter a valid email, like name@company.com" },
-      country: { label: "Country", placeholder: "Nigeria or Kenya", error: "Choose a country" },
-      offer: { label: "What you offer", placeholder: "Truck, van, refrigerated, other", error: "Choose what you offer" },
+      country: { label: "Country", placeholder: "Nigeria", error: "Choose a country" },
+      offer: { label: "What you offer", placeholder: "Return trip, partial load, other", error: "Choose what you offer" },
       routeFrom: { label: "Route from", placeholder: "e.g. Nyeri" },
       routeTo: { label: "Route to", placeholder: "e.g. Nairobi" },
       capacity: { label: "Typical spare capacity", placeholder: "e.g. 3 tonnes on return", error: "Tell us your typical spare capacity" },

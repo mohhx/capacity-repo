@@ -18,7 +18,7 @@ export const ABOUT = {
   },
   why: {
     title: "Why we exist",
-    text: "Trucks return empty. Warehouses sit partly unused. Meanwhile other businesses cannot find space when they need it. CAPACITY brings both sides into one place.",
+    text: "Trucks return empty. Meanwhile other businesses cannot find space when they need it. CAPACITY brings both sides into one place.",
   },
   layer: {
     title: "One transaction layer",
@@ -26,7 +26,7 @@ export const ABOUT = {
   },
   team: {
     title: "Who is behind it",
-    text: "CAPACITY is an exchange for unused transport and storage capacity. Providers list what they have, businesses book what they need, and payment is held until delivery is confirmed. We are launching in Nigeria and Kenya.",
+    text: "CAPACITY is an exchange for unused transport capacity. Providers list what they have, businesses book what they need, and payment is held until delivery is confirmed. We are launching in Nigeria.",
   },
   // The country pills and the "Starting on selected routes in ..." line are built from COUNTRIES in AboutCards.
   operate: {

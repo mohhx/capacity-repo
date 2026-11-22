@@ -11,6 +11,7 @@ import { Field } from "@/components/ui/Field";
 import { PhoneField } from "@/components/ui/PhoneField";
 import { PillGroup } from "@/components/ui/PillGroup";
 import { SelectField } from "@/components/ui/SelectField";
+import { ACTIVE_COUNTRIES } from "@/config/platform";
 import type { CountryCode } from "@/config/platform";
 import { APPLY_COUNTRIES, APPLY_DIAL_CODES, APPLY_DIAL_OPTIONS } from "@/content/apply";
 import { CONTACT } from "@/content/contact";
@@ -44,9 +45,7 @@ function FailedPanel() {
           {info.emailLabel}: <ContactLine item={COMPANY.email} kind="mail" />
         </li>
         <li>
-          {info.phoneLabel}: <ContactLine item={COMPANY.phoneNG} kind="tel" /> (NG)
-          <span aria-hidden="true"> · </span>
-          <ContactLine item={COMPANY.phoneKE} kind="tel" /> (KE)
+          {info.phoneLabel}: <ContactLine item={COMPANY.phoneNG} kind="tel" />
         </li>
       </ul>
     </div>
@@ -60,7 +59,7 @@ export function EarlyForm({ onSent }: EarlyFormProps) {
 
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<EarlyErrors>({});
-  const [countryChoice, setCountryChoice] = useState("");
+  const [countryChoice, setCountryChoice] = useState<string>(ACTIVE_COUNTRIES.length === 1 ? ACTIVE_COUNTRIES[0] : "");
   const [dialOverride, setDialOverride] = useState<string | null>(null);
 
   // The phone code follows the Country field, or the header's country switch until a country is chosen.
