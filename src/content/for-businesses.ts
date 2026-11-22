@@ -4,7 +4,7 @@ export const FOR_BUSINESSES = {
     eyebrow: "For businesses",
     title: "Book exactly the capacity you need,",
     accent: "when you need it.",
-    lead: "Space in a truck or van, for the time you need.",
+    lead: "Space in a truck, for the time you need.",
     cta: { label: "Request early access", href: "/early-access" },
   },
   steps: {
@@ -23,15 +23,14 @@ export const FOR_BUSINESSES = {
     intro: "The price shown on a listing is what you pay.",
     tags: ["Illustrative"], // the Figma "TBC" tag is a design note, not live copy
     rows: [
-      { label: "Price per tonne", value: "KSh 12,000" },
+      { label: "Price per tonne", value: "₦20,000" }, // placeholder sample, labelled Illustrative
       { label: "Quantity", value: "3 tonnes" },
     ],
-    total: { label: "You pay", value: "KSh 36,000" },
+    total: { label: "You pay", value: "₦60,000" },
     methodsTitle: "Paying",
     methods: [
-      { name: "Cards", note: "Both countries", tag: "NG · KE" },
-      { name: "Bank transfer", note: "Both countries", tag: "NG · KE" },
-      { name: "M-Pesa", note: "Kenya only", tag: "KE" },
+      { name: "Cards", note: "Nigeria", tag: "NG" },
+      { name: "Bank transfer", note: "Nigeria", tag: "NG" },
     ],
   },
   safety: {

@@ -24,7 +24,7 @@ export const HOME_LOWER = {
         id: "what",
         question: "What is CAPACITY and who is it for?",
         answer:
-          "CAPACITY lets transport providers sell empty return trips and idle space, and lets businesses book exactly the capacity they need. We are launching in Nigeria and Kenya.",
+          "CAPACITY lets transport providers sell empty return trips and idle space, and lets businesses book exactly the capacity they need. We are launching in Nigeria.",
       },
       {
         id: "cost",

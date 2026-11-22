@@ -4,9 +4,8 @@
 // DRAFT: the frame only shows the placeholder "Type of goods or space".
 export const EARLY_NEEDS = [
   { value: "goods", label: "General goods" },
-  { value: "refrigerated", label: "Refrigerated goods" },
   { value: "partial", label: "Partial load" },
-  { value: "storage", label: "Warehouse or storage space" },
+  { value: "return", label: "Return trip space" },
   { value: "other", label: "Other" },
 ] as const;
 
