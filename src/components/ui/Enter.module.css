@@ -31,7 +31,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .wordInner {
-    animation: pageWord 800ms var(--ease-out) calc(200ms + var(--i, 0) * 80ms) backwards;
+    animation: pageWord 800ms var(--ease-out) calc(200ms + var(--i, 0) * var(--word-step, 80ms)) backwards;
   }
   .eyebrowIn {
     animation: pageRise var(--motion-slow) var(--ease-out) 100ms backwards;

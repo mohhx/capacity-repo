@@ -5,6 +5,7 @@ import { BusinessFaq } from "@/components/for-businesses/BusinessFaq";
 import { SafetyPanel } from "@/components/for-businesses/SafetyPanel";
 import { ClosingCta } from "@/components/home/ClosingCta";
 import { PageHero } from "@/components/ui/PageHero";
+import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Stepper } from "@/components/ui/Stepper";
 import { FOR_BUSINESSES } from "@/content/for-businesses";
@@ -30,10 +31,18 @@ export default function ForBusinessesPage() {
         </section>
       </PageHero>
       <div className={`container ${styles.content}`}>
-        <PayingSection />
-        <SafetyPanel />
-        <BusinessFaq />
-        <ClosingCta title={closing.title} text={closing.text} cta={closing.cta} />
+        <Reveal>
+          <PayingSection />
+        </Reveal>
+        <Reveal>
+          <SafetyPanel />
+        </Reveal>
+        <Reveal>
+          <BusinessFaq />
+        </Reveal>
+        <Reveal>
+          <ClosingCta title={closing.title} text={closing.text} cta={closing.cta} />
+        </Reveal>
       </div>
     </main>
   );
