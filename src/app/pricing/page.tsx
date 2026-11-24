@@ -5,6 +5,9 @@ import { PricingAudience } from "@/components/pricing/PricingAudience";
 import { PricingExtras } from "@/components/pricing/PricingExtras";
 import { Button } from "@/components/ui/Button";
 import { PRICING } from "@/content/pricing";
+import { PageTitle } from "@/components/ui/PageTitle";
+import { Reveal } from "@/components/ui/Reveal";
+import enter from "@/components/ui/Enter.module.css";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = { title: "Pricing and fees" };
@@ -16,12 +19,12 @@ export default function PricingPage() {
       <div className={styles.stack}>
         <section className={styles.hero}>
           <div className={styles.copy}>
-            <p className={styles.eyebrow}>{hero.eyebrow}</p>
+            <p className={`${styles.eyebrow} ${enter.eyebrowIn}`}>{hero.eyebrow}</p>
             <h1 className={styles.title}>
-              {hero.title} <span className={styles.accent}>{hero.accent}</span>
+              <PageTitle title={hero.title} accent={hero.accent} accentClassName={styles.accent} />
             </h1>
-            <p className={styles.lead}>{hero.lead}</p>
-            <div className={styles.actions}>
+            <p className={`${styles.lead} ${enter.leadIn}`}>{hero.lead}</p>
+            <div className={`${styles.actions} ${enter.actionsIn}`}>
               <Button href={hero.cta.href}>{hero.cta.label}</Button>
             </div>
           </div>
@@ -30,10 +33,16 @@ export default function PricingPage() {
             <CostCard withHeading={false} receiveLabel={example.receiveLabel} showSplit />
           </div>
         </section>
-        <PricingAudience />
-        <PricingExtras />
+        <Reveal>
+          <PricingAudience />
+        </Reveal>
+        <Reveal>
+          <PricingExtras />
+        </Reveal>
       </div>
-      <ClosingCta title={closing.title} text={closing.text} cta={closing.cta} textHref={closing.textHref} roomy />
+      <Reveal>
+        <ClosingCta title={closing.title} text={closing.text} cta={closing.cta} textHref={closing.textHref} roomy />
+      </Reveal>
     </main>
   );
 }
