@@ -2,17 +2,21 @@ import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { EARLY } from "@/content/early-access";
 // Shares the Apply page's intro styles.
+import { PageTitle } from "@/components/ui/PageTitle";
+import enter from "@/components/ui/Enter.module.css";
 import styles from "@/components/apply/ApplyIntro.module.css";
 
 export function EarlyHead() {
   const { back, title, lead } = EARLY.hero;
   return (
     <header className={styles.head}>
-      <Link href={back.href} className={styles.back}>
+      <Link href={back.href} className={`${styles.back} ${enter.eyebrowIn}`}>
         {back.label}
       </Link>
-      <h1 className={styles.title}>{title}</h1>
-      <p className={styles.lead}>{lead}</p>
+      <h1 className={styles.title}>
+        <PageTitle title={title} />
+      </h1>
+      <p className={`${styles.lead} ${enter.leadIn}`}>{lead}</p>
     </header>
   );
 }

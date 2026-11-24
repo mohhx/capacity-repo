@@ -3,6 +3,8 @@ import { Icon } from "@/components/ui/Icon";
 import { CONTACT } from "@/content/contact";
 import { COMPANY } from "@/content/site";
 import { ContactLine } from "./ContactLine";
+import { PageTitle } from "@/components/ui/PageTitle";
+import enter from "@/components/ui/Enter.module.css";
 import styles from "./ContactInfo.module.css";
 
 export function ContactInfo() {
@@ -10,12 +12,14 @@ export function ContactInfo() {
   return (
     <div className={styles.info}>
       <div className={styles.heading}>
-        <p className={styles.eyebrow}>{hero.eyebrow}</p>
-        <h1 className={styles.title}>{hero.title}</h1>
-        <p className={styles.lead}>{hero.lead}</p>
+        <p className={`${styles.eyebrow} ${enter.eyebrowIn}`}>{hero.eyebrow}</p>
+        <h1 className={styles.title}>
+          <PageTitle title={hero.title} />
+        </h1>
+        <p className={`${styles.lead} ${enter.leadIn}`}>{hero.lead}</p>
       </div>
 
-      <ul className={styles.cards}>
+      <ul className={`${styles.cards} ${enter.actionsIn}`}>
         <Card as="li" padded={false} className={styles.card}>
           <span className={styles.label}>{info.emailLabel}</span>
           <span className={styles.value}>
