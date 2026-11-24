@@ -8,20 +8,39 @@ import { Markets } from "@/components/home/Markets";
 import { RouteForm } from "@/components/home/RouteForm";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { UsedVsIdle } from "@/components/home/UsedVsIdle";
+import { Reveal } from "@/components/ui/Reveal";
 
 export default function HomePage() {
   return (
     <main className="container">
       <Hero />
-      <BookCards />
-      <UsedVsIdle />
-      <HowItWorks />
-      <AudiencePanels />
-      <TrustStrip />
-      <Markets />
-      <RouteForm />
-      <FaqTeaser />
-      <ClosingCta />
+      <Reveal>
+        <BookCards />
+      </Reveal>
+      <Reveal>
+        <UsedVsIdle />
+      </Reveal>
+      <Reveal>
+        <HowItWorks />
+      </Reveal>
+      <Reveal>
+        <AudiencePanels />
+      </Reveal>
+      <Reveal>
+        <TrustStrip />
+      </Reveal>
+      <Reveal>
+        <Markets />
+      </Reveal>
+      <Reveal>
+        <RouteForm />
+      </Reveal>
+      <Reveal>
+        <FaqTeaser />
+      </Reveal>
+      <Reveal>
+        <ClosingCta />
+      </Reveal>
     </main>
   );
 }
