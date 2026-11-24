@@ -1,0 +1,45 @@
+/* Page entrance, shared by the inner pages. The final state is the default; motion only runs when allowed. */
+.word {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  padding-bottom: 0.14em; /* keeps the tails of p and g from being clipped */
+  margin-bottom: -0.14em;
+}
+.wordInner {
+  display: inline-block;
+}
+
+@keyframes pageRise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-distance));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pageWord {
+  from {
+    transform: translateY(110%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wordInner {
+    animation: pageWord 800ms var(--ease-out) calc(200ms + var(--i, 0) * 80ms) backwards;
+  }
+  .eyebrowIn {
+    animation: pageRise var(--motion-slow) var(--ease-out) 100ms backwards;
+  }
+  .leadIn {
+    animation: pageRise var(--motion-slow) var(--ease-out) 700ms backwards;
+  }
+  .actionsIn {
+    animation: pageRise var(--motion-slow) var(--ease-out) 850ms backwards;
+  }
+}

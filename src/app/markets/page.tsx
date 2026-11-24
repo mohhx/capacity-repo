@@ -4,6 +4,9 @@ import { MarketCard } from "@/components/markets/MarketCard";
 import { MarketSelector } from "@/components/markets/MarketSelector";
 import { ACTIVE_COUNTRIES } from "@/config/platform";
 import { MARKETS } from "@/content/markets";
+import { PageTitle } from "@/components/ui/PageTitle";
+import { Reveal } from "@/components/ui/Reveal";
+import enter from "@/components/ui/Enter.module.css";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -19,14 +22,13 @@ export default function MarketsPage() {
     <main className={`container ${styles.page}`}>
       <div className={styles.stack}>
         <section className={styles.hero}>
-          <p className={styles.eyebrow}>{hero.eyebrow}</p>
+          <p className={`${styles.eyebrow} ${enter.eyebrowIn}`}>{hero.eyebrow}</p>
 
           <h1 className={styles.title}>
-            {hero.title}
-            <span className={styles.accent}>{hero.accent}</span>
+            <PageTitle title={hero.title} accent={hero.accent} accentClassName={styles.accent} gap={false} />
           </h1>
 
-          <p className={styles.lead}>{hero.description}</p>
+          <p className={`${styles.lead} ${enter.leadIn}`}>{hero.description}</p>
         </section>
 
         <section className={styles.markets} aria-label="Available markets">
@@ -46,13 +48,15 @@ export default function MarketsPage() {
         </section>
       </div>
 
-      <ClosingCta
-        title={cta.title}
-        text={cta.text}
-        cta={cta.button}
-        textHref={cta.textHref}
-        roomy
-      />
+      <Reveal>
+        <ClosingCta
+          title={cta.title}
+          text={cta.text}
+          cta={cta.button}
+          textHref={cta.textHref}
+          roomy
+        />
+      </Reveal>
     </main>
   );
 }
