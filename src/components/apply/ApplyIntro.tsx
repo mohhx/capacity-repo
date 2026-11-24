@@ -1,17 +1,21 @@
 import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { APPLY } from "@/content/apply";
+import { PageTitle } from "@/components/ui/PageTitle";
+import enter from "@/components/ui/Enter.module.css";
 import styles from "./ApplyIntro.module.css";
 
 export function ApplyHead() {
   const { back, title, lead } = APPLY.hero;
   return (
     <header className={styles.head}>
-      <Link href={back.href} className={styles.back}>
+      <Link href={back.href} className={`${styles.back} ${enter.eyebrowIn}`}>
         {back.label}
       </Link>
-      <h1 className={styles.title}>{title}</h1>
-      <p className={styles.lead}>{lead}</p>
+      <h1 className={styles.title}>
+        <PageTitle title={title} />
+      </h1>
+      <p className={`${styles.lead} ${enter.leadIn}`}>{lead}</p>
     </header>
   );
 }

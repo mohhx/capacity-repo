@@ -4,7 +4,8 @@ import styles from "./Enter.module.css";
 
 interface PageTitleProps {
   title: string;
-  accent: string;
+  /** Optional second line. Leave out for a single-line title. */
+  accent?: string;
   /** The page's own accent class, so each page keeps its own sizes and colours. */
   accentClassName?: string;
   /** Put a space between the title and the accent line (the Markets heading has none). */
@@ -32,6 +33,7 @@ function Words({ text, start }: { text: string; start: number }) {
 /** Goes inside the page's own <h1>. The text stays real text; only the way it appears is animated. */
 export function PageTitle({ title, accent, accentClassName, gap = true }: PageTitleProps) {
   const count = title.split(/\s+/).filter(Boolean).length;
+  if (!accent) return <Words text={title} start={0} />;
   return (
     <>
       <Words text={title} start={0} />
