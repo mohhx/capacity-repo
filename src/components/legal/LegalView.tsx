@@ -3,19 +3,23 @@ import { CountrySwitch } from "@/components/layout/CountrySwitch";
 import { ContactLine } from "@/components/contact/ContactLine";
 import { COMPANY } from "@/content/site";
 import { LEGAL_DOCUMENT_UI, type LegalDocument } from "@/content/legal";
+import { PageTitle } from "@/components/ui/PageTitle";
+import enter from "@/components/ui/Enter.module.css";
 import styles from "./LegalView.module.css";
 
 export function LegalView({ document }: { document: LegalDocument }) {
   return (
     <main className={`container ${styles.page}`}>
-      <Link href={LEGAL_DOCUMENT_UI.back.href} className={styles.back}>
+      <Link href={LEGAL_DOCUMENT_UI.back.href} className={`${styles.back} ${enter.eyebrowIn}`}>
         <span aria-hidden="true">←</span> {LEGAL_DOCUMENT_UI.back.label}
       </Link>
 
       <header className={styles.hero}>
-        <h1 className={styles.title}>{document.title}</h1>
+        <h1 className={styles.title}>
+          <PageTitle title={document.title} />
+        </h1>
 
-        <div className={styles.metadata}>
+        <div className={`${styles.metadata} ${enter.leadIn}`}>
           <div className={styles.applies}>
             <span>{LEGAL_DOCUMENT_UI.appliesTo}</span>
             <CountrySwitch variant="name" direction="down" />
@@ -29,7 +33,7 @@ export function LegalView({ document }: { document: LegalDocument }) {
         </div>
 
         {document.placeholder && (
-          <p className={styles.notice}>
+          <p className={`${styles.notice} ${enter.leadIn}`}>
             {LEGAL_DOCUMENT_UI.placeholderNote}
           </p>
         )}
