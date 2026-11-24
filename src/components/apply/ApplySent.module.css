@@ -59,3 +59,73 @@
   color: var(--mint);
   font-weight: 700;
 }
+
+/* Motion: the check draws in, then the text, cards and button rise. The final state is the default. */
+@keyframes sentRise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-distance));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes sentCircle {
+  from {
+    stroke-dashoffset: 315;
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+@keyframes sentTick {
+  from {
+    stroke-dashoffset: 78;
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Circle starts at 12 o'clock and draws clockwise (about 315 long), then the tick (about 77 long). */
+  .check circle {
+    transform: rotate(-90deg);
+    transform-origin: 52px 52px;
+    stroke-dasharray: 315;
+    animation: sentCircle 700ms var(--ease-out) 100ms backwards;
+  }
+  .check path {
+    stroke-dasharray: 78;
+    animation: sentTick 350ms var(--ease-out) 700ms backwards;
+  }
+  .title {
+    animation: sentRise var(--motion-slow) var(--ease-out) 900ms backwards;
+  }
+  .text {
+    animation: sentRise var(--motion-slow) var(--ease-out) 1000ms backwards;
+  }
+  .steps .step:nth-child(1) {
+    animation: sentRise var(--motion-slow) var(--ease-out) 1100ms backwards;
+  }
+  .steps .step:nth-child(2) {
+    animation: sentRise var(--motion-slow) var(--ease-out) 1200ms backwards;
+  }
+  .steps .step:nth-child(3) {
+    animation: sentRise var(--motion-slow) var(--ease-out) 1300ms backwards;
+  }
+  .sent > :last-child {
+    animation: sentRise var(--motion-slow) var(--ease-out) 1450ms backwards;
+  }
+}
