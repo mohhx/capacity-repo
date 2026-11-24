@@ -68,6 +68,15 @@
   --radius-sm: 12px;
   --radius-card: 16px;
   --radius-lg: 20px;
+
+  /* motion (shared timings; reveals use these) */
+  --motion-fast: 150ms;
+  --motion-base: 250ms;
+  --motion-slow: 600ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-cinematic: 1600ms;
+  --stagger-step: 100ms;
+  --reveal-distance: 24px;
   --radius-panel: 24px;
   --radius-pill: 999px;
   --border-width: 1px;
