@@ -1,6 +1,9 @@
 import Image from "next/image";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { Button } from "@/components/ui/Button";
+import { PageTitle } from "@/components/ui/PageTitle";
+import { Reveal } from "@/components/ui/Reveal";
+import enter from "@/components/ui/Enter.module.css";
 import styles from "./PageHero.module.css";
 
 /** Hero B (truck with the CAPACITY logo painted on it), shared by the inner pages. */
@@ -17,23 +20,28 @@ interface PageHeroProps {
 }
 
 export function PageHero({ eyebrow, title, accent, lead, cta, children }: PageHeroProps) {
+  const wordCount = title.split(/\s+/).filter(Boolean).length + accent.split(/\s+/).filter(Boolean).length;
   return (
     <section className={styles.hero}>
       <div className={styles.photo} aria-hidden="true">
         <Image src={HERO_IMAGE} alt="" fill priority sizes="100vw" className={styles.image} />
       </div>
       <div className={`container ${styles.inner}`}>
-        <div className={styles.text}>
-          <p className={styles.eyebrow}>{eyebrow}</p>
+        <div className={styles.text} style={{ "--w": wordCount } as CSSProperties}>
+          <p className={`${styles.eyebrow} ${enter.eyebrowIn}`}>{eyebrow}</p>
           <h1 className={styles.title}>
-            {title} <span className={styles.accent}>{accent}</span>
+            <PageTitle title={title} accent={accent} accentClassName={styles.accent} />
           </h1>
-          <p className={styles.lead}>{lead}</p>
-          <div className={styles.actions}>
+          <p className={`${styles.lead} ${styles.leadIn}`}>{lead}</p>
+          <div className={`${styles.actions} ${styles.actionsIn}`}>
             <Button href={cta.href}>{cta.label}</Button>
           </div>
         </div>
-        {children ? <div className={styles.extra}>{children}</div> : null}
+        {children ? (
+          <div className={styles.extra}>
+            <Reveal>{children}</Reveal>
+          </div>
+        ) : null}
       </div>
     </section>
   );

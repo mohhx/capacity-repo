@@ -5,6 +5,7 @@ import { ResponsibilitiesSection } from "@/components/for-providers/Responsibili
 import { ClosingCta } from "@/components/home/ClosingCta";
 import { WhyList } from "@/components/for-providers/WhyList";
 import { PageHero } from "@/components/ui/PageHero";
+import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Stepper } from "@/components/ui/Stepper";
 import { FOR_PROVIDERS } from "@/content/for-providers";
@@ -26,14 +27,24 @@ export default function ForProvidersPage() {
         <WhyList />
       </PageHero>
       <div className={`container ${styles.content}`}>
-        <section className={styles.steps}>
-          <SectionHeading>{steps.title}</SectionHeading>
-          <Stepper steps={steps.items} />
-        </section>
-        <ApplySection />
-        <ResponsibilitiesSection />
-        <ProviderFaq />
-        <ClosingCta title={closing.title} text={closing.text} cta={closing.cta} />
+        <Reveal>
+          <section className={styles.steps}>
+            <SectionHeading>{steps.title}</SectionHeading>
+            <Stepper steps={steps.items} />
+          </section>
+        </Reveal>
+        <Reveal>
+          <ApplySection />
+        </Reveal>
+        <Reveal>
+          <ResponsibilitiesSection />
+        </Reveal>
+        <Reveal>
+          <ProviderFaq />
+        </Reveal>
+        <Reveal>
+          <ClosingCta title={closing.title} text={closing.text} cta={closing.cta} />
+        </Reveal>
       </div>
     </main>
   );

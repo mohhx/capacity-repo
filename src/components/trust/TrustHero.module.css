@@ -80,3 +80,21 @@
     border-radius: 50%;
   }
 }
+
+/* Entrance: the badge fades in with a slight scale, a little after the text. */
+@keyframes badgeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .badgeIn {
+    animation: badgeIn 900ms var(--ease-out) 500ms backwards;
+  }
+}

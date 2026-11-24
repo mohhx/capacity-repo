@@ -85,3 +85,56 @@
 .extra {
   min-width: 0;
 }
+
+/* Entrance. The final state is the default; motion only runs when the visitor allows it. */
+.title {
+  --word-step: 55ms; /* faster stagger: these headlines run to ten words */
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes heroCurtain {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes heroRise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-distance));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .image {
+    animation: heroZoom var(--motion-cinematic) var(--ease-out) both;
+  }
+  .photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: var(--ink);
+    pointer-events: none;
+    animation: heroCurtain 1200ms var(--ease-out) 100ms both;
+  }
+  .leadIn {
+    animation: heroRise var(--motion-slow) var(--ease-out) calc(300ms + var(--w, 6) * 55ms) backwards;
+  }
+  .actionsIn {
+    animation: heroRise var(--motion-slow) var(--ease-out) calc(450ms + var(--w, 6) * 55ms) backwards;
+  }
+}
