@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import { PageTitle } from "@/components/ui/PageTitle";
+import enter from "@/components/ui/Enter.module.css";
 import styles from "./StatusPage.module.css";
 
 interface StatusPageProps {
@@ -23,10 +25,12 @@ export function StatusPage({ mark, tone = "muted", title, text, extra, actions, 
       <div className={`${styles.circle} ${tone === "mint" ? styles.mint : ""}`} aria-hidden="true">
         {mark}
       </div>
-      <h1 className={styles.title}>{title}</h1>
-      <p className={styles.text}>{text}</p>
+      <h1 className={styles.title}>
+        <PageTitle title={title} />
+      </h1>
+      <p className={`${styles.text} ${enter.leadIn}`}>{text}</p>
       {extra}
-      <div className={`${styles.actions} ${stacked ? styles.stacked : ""}`}>{actions}</div>
+      <div className={`${styles.actions} ${stacked ? styles.stacked : ""} ${enter.actionsIn}`}>{actions}</div>
     </main>
   );
 }
