@@ -5,6 +5,7 @@ import { CountryProvider } from "@/components/layout/CountryProvider";
 import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SiteChrome } from "@/components/layout/SiteChrome";
 import "./globals.css";
 
 const inter = Inter({
@@ -31,10 +32,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={inter.variable}>
       <body>
         <CountryProvider>
-          <AnnouncementBar />
-          <Header />
-          {children}
-          <Footer />
+          <SiteChrome
+            top={
+              <>
+                <AnnouncementBar />
+                <Header />
+              </>
+            }
+            bottom={<Footer />}
+          >
+            {children}
+          </SiteChrome>
         </CountryProvider>
       </body>
     </html>
